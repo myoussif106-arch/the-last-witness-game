@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الشاهد الأخير</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+  { "imports": {
+      "three": "../node_modules/three/build/three.module.js",
+      "three/addons/": "../node_modules/three/examples/jsm/"
+  } }
+  </script>
+</head>
+<body>
+  <div id="stage"></div>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <div id="crosshair"><span></span></div>
+    <div id="prompt" class="hidden"><kbd>E</kbd><span class="txt"></span></div>
+    <div id="objectives"></div>
+    <div id="toasts"></div>
+    <div id="hint" class="hidden"></div>
+    <div id="keys-help">
+      <span><kbd>Tab</kbd> ملف القضية</span><span><kbd>B</kbd> لوحة التحقيق</span><span><kbd>F</kbd> حاسة المحقق</span><span><kbd>Esc</kbd> إيقاف</span>
+    </div>
+    <div id="saveflag" class="hidden">تم الحفظ تلقائيًا</div>
+    <div id="observation" class="hidden"><div class="obs-text"></div><div class="obs-hint">اضغط <kbd>E</kbd> أو انقر للمتابعة</div></div>
+  </div>
+
+  <div id="letterbox" class="hidden"><div class="bar top"></div><div class="bar bottom"></div></div>
+
+  <!-- Overlays are filled by JS -->
+  <div id="dialogue" class="overlay hidden"></div>
+  <div id="inspect" class="overlay hidden"></div>
+  <div id="casefile" class="overlay hidden"></div>
+  <div id="board" class="overlay hidden"></div>
+  <div id="accuse" class="overlay hidden"></div>
+  <div id="result" class="overlay hidden"></div>
+  <div id="menu" class="overlay"></div>
+  <div id="pause" class="overlay hidden"></div>
+  <div id="settings" class="overlay hidden"></div>
+  <div id="intro" class="overlay hidden"></div>
+  <div id="loading" class="overlay hidden">
+    <div class="load-inner">
+      <div class="load-title">الشاهد الأخير</div>
+      <div class="load-case"></div>
+      <div class="load-bar"><div></div></div>
+      <div class="load-tip"></div>
+    </div>
+  </div>
+  <div id="clicklock" class="hidden"><div>انقر للعودة إلى التحقيق</div></div>
+  <div id="fade"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

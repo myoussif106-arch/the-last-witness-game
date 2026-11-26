@@ -1,0 +1,27 @@
+{
+  "name": "the-last-witness",
+  "productName": "الشاهد الأخير - The Last Witness",
+  "version": "0.2.1",
+  "description": "لعبة تحقيق ثلاثية الأبعاد من منظور الشخص الأول",
+  "main": "main.js",
+  "updateRepo": "myoussif106-arch/the-last-witness-game",
+  "updateBranch": "main",
+  "scripts": {
+    "start": "electron .",
+    "assets": "node tools/fetch-assets.mjs && electron tools/convert-textures.js",
+    "convert": "electron tools/convert-textures.js",
+    "bake": "set LW_BAKE=1&& electron .",
+    "dev": "node tools/devserver.js",
+    "release": "node tools/release.mjs publish",
+    "portable": "node tools/release.mjs portable",
+    "ship": "node tools/release.mjs ship"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1"
+  }
+}
