@@ -214,7 +214,9 @@ export class Character {
   setMood(mood) { if (!MOODS[mood]) return; this.mood = mood; this._play(this._animFor(this.state)); }
 
   // Lip-sync a line of text; `cps` = characters per second (matches the subtitle typewriter).
-  speak(text, cps = 16) {
+  // With a recorded voice, pass its duration and a loudness function: the mouth shapes are
+  // spread over the audio and opened/closed by the actual loudness of the voice.
+  speak(text, cps = 16, voice = null) {
     const seq = [];
     for (const ch of text) {
       if (VOWEL_MARKS[ch] !== undefined) { if (seq.length) seq[seq.length - 1].v = VOWEL_MARKS[ch]; continue; }
@@ -223,7 +225,8 @@ export class Character {
       const v = LETTER_VISEME[ch];
       seq.push({ v: v === undefined ? 10 : v, w: v === 10 || v === 13 || v === 14 ? 1 : 0.75 });
     }
-    this.speech = { seq, t: 0, cps };
+    if (voice) cps = seq.length / Math.max(0.3, voice.duration * 0.96);
+    this.speech = { seq, t: 0, cps, level: voice ? voice.level : null, amp: 0 };
     this.setState('talk');
   }
   stopSpeaking() { this.speech = null; if (this.state === 'talk') this.setState('listen'); }
@@ -272,10 +275,12 @@ export class Character {
       else {
         const a = sp.seq[i], b = sp.seq[i + 1] || { v: 0, w: 0 };
         const ease = f * f * (3 - 2 * f);
-        if (a.v) this._setMorph(VISEMES[a.v], a.w * (1 - ease) * 0.6);
-        if (b.v) this._setMorph(VISEMES[b.v], b.w * ease * 0.6);
+        let k = 0.6, jaw = 0.1;
+        if (sp.level) { sp.amp += (sp.level() - sp.amp) * Math.min(1, dt * 25); k = 0.15 + sp.amp * 0.75; jaw = 0.04 + sp.amp * 0.2; }
+        if (a.v) this._setMorph(VISEMES[a.v], a.w * (1 - ease) * k);
+        if (b.v) this._setMorph(VISEMES[b.v], b.w * ease * k);
         const open = ((a.v === 10 || a.v === 13 ? a.w : a.w * 0.4) * (1 - ease) + (b.v === 10 || b.v === 13 ? b.w : b.w * 0.4) * ease);
-        this._setMorph('AK_25_JawOpen', open * 0.1);
+        this._setMorph('AK_25_JawOpen', open * jaw);
       }
     }
     if (this.mesh) {

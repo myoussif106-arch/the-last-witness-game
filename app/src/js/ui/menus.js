@@ -191,7 +191,7 @@ export function renderSettings(app, onClose) {
       rows.appendChild(r);
     };
     if (tab === 'audio') {
-      slider('master', 'الصوت العام', 0, 1, 0.01); slider('music', 'الموسيقى', 0, 1, 0.01); slider('sfx', 'المؤثرات', 0, 1, 0.01); slider('ambient', 'أصوات البيئة', 0, 1, 0.01);
+      slider('master', 'الصوت العام', 0, 1, 0.01); slider('music', 'الموسيقى', 0, 1, 0.01); slider('sfx', 'المؤثرات', 0, 1, 0.01); slider('ambient', 'أصوات البيئة', 0, 1, 0.01); slider('voice', 'أصوات الشخصيات', 0, 1, 0.01);
     } else if (tab === 'controls') {
       slider('sensitivity', 'حساسية الفأرة', 0.2, 3, 0.05, v => v.toFixed(2)); seg('invertY', 'عكس المحور الرأسي', [[false, 'لا'], [true, 'نعم']]); seg('headBob', 'اهتزاز الكاميرا أثناء المشي', [[true, 'مفعّل'], [false, 'معطّل']]);
       rows.appendChild(h(`<div class="row" style="grid-template-columns:1fr"><div style="color:var(--ink-dim);line-height:2;font-size:15px">W A S D: الحركة • Shift: الإسراع • C: الانحناء • E: التفاعل والتحدث • Tab: ملف القضية • B: لوحة التحقيق • F: حاسة المحقق • Esc: إيقاف مؤقت • Space/E/نقرة: متابعة الحوار • 1-9: اختيار سؤال</div></div>`));

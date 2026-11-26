@@ -1,0 +1,638 @@
+{
+ "salim_65828c40": {
+  "file": "salim_65828c40.mp3",
+  "npc": "salim"
+ },
+ "salim_86a4e7ae": {
+  "file": "salim_86a4e7ae.mp3",
+  "npc": "salim"
+ },
+ "salim_8e8cef9b": {
+  "file": "salim_8e8cef9b.mp3",
+  "npc": "salim"
+ },
+ "salim_cbec2ece": {
+  "file": "salim_cbec2ece.mp3",
+  "npc": "salim"
+ },
+ "salim_42608ea1": {
+  "file": "salim_42608ea1.mp3",
+  "npc": "salim"
+ },
+ "salim_b024ffb7": {
+  "file": "salim_b024ffb7.mp3",
+  "npc": "salim"
+ },
+ "salim_66348495": {
+  "file": "salim_66348495.mp3",
+  "npc": "salim"
+ },
+ "salim_003e3c56": {
+  "file": "salim_003e3c56.mp3",
+  "npc": "salim"
+ },
+ "salim_3ad81d58": {
+  "file": "salim_3ad81d58.mp3",
+  "npc": "salim"
+ },
+ "salim_3f5561c0": {
+  "file": "salim_3f5561c0.mp3",
+  "npc": "salim"
+ },
+ "salim_d431236e": {
+  "file": "salim_d431236e.mp3",
+  "npc": "salim"
+ },
+ "salim_0a9d2c9a": {
+  "file": "salim_0a9d2c9a.mp3",
+  "npc": "salim"
+ },
+ "salim_7a498aeb": {
+  "file": "salim_7a498aeb.mp3",
+  "npc": "salim"
+ },
+ "salim_4bf29723": {
+  "file": "salim_4bf29723.mp3",
+  "npc": "salim"
+ },
+ "salim_bbefeb11": {
+  "file": "salim_bbefeb11.mp3",
+  "npc": "salim"
+ },
+ "salim_012d86d2": {
+  "file": "salim_012d86d2.mp3",
+  "npc": "salim"
+ },
+ "salim_7513266e": {
+  "file": "salim_7513266e.mp3",
+  "npc": "salim"
+ },
+ "salim_1c139cd9": {
+  "file": "salim_1c139cd9.mp3",
+  "npc": "salim"
+ },
+ "hassan_7a154c53": {
+  "file": "hassan_7a154c53.mp3",
+  "npc": "hassan"
+ },
+ "hassan_946c7db2": {
+  "file": "hassan_946c7db2.mp3",
+  "npc": "hassan"
+ },
+ "hassan_a3c07911": {
+  "file": "hassan_a3c07911.mp3",
+  "npc": "hassan"
+ },
+ "hassan_19e1a1ec": {
+  "file": "hassan_19e1a1ec.mp3",
+  "npc": "hassan"
+ },
+ "hassan_1c890fdb": {
+  "file": "hassan_1c890fdb.mp3",
+  "npc": "hassan"
+ },
+ "hassan_cb414957": {
+  "file": "hassan_cb414957.mp3",
+  "npc": "hassan"
+ },
+ "hassan_f1c0c93f": {
+  "file": "hassan_f1c0c93f.mp3",
+  "npc": "hassan"
+ },
+ "hassan_8bafa2a6": {
+  "file": "hassan_8bafa2a6.mp3",
+  "npc": "hassan"
+ },
+ "hassan_41dc5e8d": {
+  "file": "hassan_41dc5e8d.mp3",
+  "npc": "hassan"
+ },
+ "hassan_6ab1cee3": {
+  "file": "hassan_6ab1cee3.mp3",
+  "npc": "hassan"
+ },
+ "hassan_e4d2b117": {
+  "file": "hassan_e4d2b117.mp3",
+  "npc": "hassan"
+ },
+ "hassan_2529878c": {
+  "file": "hassan_2529878c.mp3",
+  "npc": "hassan"
+ },
+ "hassan_f2278566": {
+  "file": "hassan_f2278566.mp3",
+  "npc": "hassan"
+ },
+ "hassan_997ba7a6": {
+  "file": "hassan_997ba7a6.mp3",
+  "npc": "hassan"
+ },
+ "hassan_f2a812b2": {
+  "file": "hassan_f2a812b2.mp3",
+  "npc": "hassan"
+ },
+ "hassan_8fdbee4e": {
+  "file": "hassan_8fdbee4e.mp3",
+  "npc": "hassan"
+ },
+ "hassan_0efe04dc": {
+  "file": "hassan_0efe04dc.mp3",
+  "npc": "hassan"
+ },
+ "hassan_bd329810": {
+  "file": "hassan_bd329810.mp3",
+  "npc": "hassan"
+ },
+ "hassan_43542437": {
+  "file": "hassan_43542437.mp3",
+  "npc": "hassan"
+ },
+ "hassan_e85fde5a": {
+  "file": "hassan_e85fde5a.mp3",
+  "npc": "hassan"
+ },
+ "hassan_37efb203": {
+  "file": "hassan_37efb203.mp3",
+  "npc": "hassan"
+ },
+ "hassan_ca4c4a4e": {
+  "file": "hassan_ca4c4a4e.mp3",
+  "npc": "hassan"
+ },
+ "hassan_9bab4b60": {
+  "file": "hassan_9bab4b60.mp3",
+  "npc": "hassan"
+ },
+ "hassan_4705ab55": {
+  "file": "hassan_4705ab55.mp3",
+  "npc": "hassan"
+ },
+ "hassan_86da43f1": {
+  "file": "hassan_86da43f1.mp3",
+  "npc": "hassan"
+ },
+ "hassan_e1e540b0": {
+  "file": "hassan_e1e540b0.mp3",
+  "npc": "hassan"
+ },
+ "hassan_3dccd7a2": {
+  "file": "hassan_3dccd7a2.mp3",
+  "npc": "hassan"
+ },
+ "hassan_d96434f0": {
+  "file": "hassan_d96434f0.mp3",
+  "npc": "hassan"
+ },
+ "hassan_d36d5815": {
+  "file": "hassan_d36d5815.mp3",
+  "npc": "hassan"
+ },
+ "hassan_181deacd": {
+  "file": "hassan_181deacd.mp3",
+  "npc": "hassan"
+ },
+ "hassan_7df74c05": {
+  "file": "hassan_7df74c05.mp3",
+  "npc": "hassan"
+ },
+ "hassan_19294242": {
+  "file": "hassan_19294242.mp3",
+  "npc": "hassan"
+ },
+ "hassan_fd2581bc": {
+  "file": "hassan_fd2581bc.mp3",
+  "npc": "hassan"
+ },
+ "hassan_f40b29cc": {
+  "file": "hassan_f40b29cc.mp3",
+  "npc": "hassan"
+ },
+ "hassan_098585a0": {
+  "file": "hassan_098585a0.mp3",
+  "npc": "hassan"
+ },
+ "hassan_4acd53a3": {
+  "file": "hassan_4acd53a3.mp3",
+  "npc": "hassan"
+ },
+ "hassan_ff5b1d9b": {
+  "file": "hassan_ff5b1d9b.mp3",
+  "npc": "hassan"
+ },
+ "hassan_a33c8102": {
+  "file": "hassan_a33c8102.mp3",
+  "npc": "hassan"
+ },
+ "hassan_601ce4d7": {
+  "file": "hassan_601ce4d7.mp3",
+  "npc": "hassan"
+ },
+ "hassan_da9af282": {
+  "file": "hassan_da9af282.mp3",
+  "npc": "hassan"
+ },
+ "hassan_c46f22f1": {
+  "file": "hassan_c46f22f1.mp3",
+  "npc": "hassan"
+ },
+ "hassan_66016c27": {
+  "file": "hassan_66016c27.mp3",
+  "npc": "hassan"
+ },
+ "hassan_4ce3ea7a": {
+  "file": "hassan_4ce3ea7a.mp3",
+  "npc": "hassan"
+ },
+ "hassan_5128ced3": {
+  "file": "hassan_5128ced3.mp3",
+  "npc": "hassan"
+ },
+ "nader_12393351": {
+  "file": "nader_12393351.mp3",
+  "npc": "nader"
+ },
+ "nader_56a2a70e": {
+  "file": "nader_56a2a70e.mp3",
+  "npc": "nader"
+ },
+ "nader_b5e80068": {
+  "file": "nader_b5e80068.mp3",
+  "npc": "nader"
+ },
+ "nader_5082f501": {
+  "file": "nader_5082f501.mp3",
+  "npc": "nader"
+ },
+ "nader_e739336d": {
+  "file": "nader_e739336d.mp3",
+  "npc": "nader"
+ },
+ "nader_0aeadae6": {
+  "file": "nader_0aeadae6.mp3",
+  "npc": "nader"
+ },
+ "nader_6c09973a": {
+  "file": "nader_6c09973a.mp3",
+  "npc": "nader"
+ },
+ "nader_13b71eb8": {
+  "file": "nader_13b71eb8.mp3",
+  "npc": "nader"
+ },
+ "nader_391aeb5b": {
+  "file": "nader_391aeb5b.mp3",
+  "npc": "nader"
+ },
+ "nader_8283bbd0": {
+  "file": "nader_8283bbd0.mp3",
+  "npc": "nader"
+ },
+ "nader_c7b5cdf1": {
+  "file": "nader_c7b5cdf1.mp3",
+  "npc": "nader"
+ },
+ "nader_05d5244a": {
+  "file": "nader_05d5244a.mp3",
+  "npc": "nader"
+ },
+ "nader_36258f0e": {
+  "file": "nader_36258f0e.mp3",
+  "npc": "nader"
+ },
+ "nader_f4f5af97": {
+  "file": "nader_f4f5af97.mp3",
+  "npc": "nader"
+ },
+ "nader_e6c00511": {
+  "file": "nader_e6c00511.mp3",
+  "npc": "nader"
+ },
+ "nader_b6a74fd8": {
+  "file": "nader_b6a74fd8.mp3",
+  "npc": "nader"
+ },
+ "nader_ebddee1d": {
+  "file": "nader_ebddee1d.mp3",
+  "npc": "nader"
+ },
+ "nader_1e64b7ab": {
+  "file": "nader_1e64b7ab.mp3",
+  "npc": "nader"
+ },
+ "nader_6314fac9": {
+  "file": "nader_6314fac9.mp3",
+  "npc": "nader"
+ },
+ "nader_a2309e72": {
+  "file": "nader_a2309e72.mp3",
+  "npc": "nader"
+ },
+ "nader_e1b460af": {
+  "file": "nader_e1b460af.mp3",
+  "npc": "nader"
+ },
+ "nader_6342b8fc": {
+  "file": "nader_6342b8fc.mp3",
+  "npc": "nader"
+ },
+ "nader_c9932382": {
+  "file": "nader_c9932382.mp3",
+  "npc": "nader"
+ },
+ "nader_54243397": {
+  "file": "nader_54243397.mp3",
+  "npc": "nader"
+ },
+ "nader_f154d8c4": {
+  "file": "nader_f154d8c4.mp3",
+  "npc": "nader"
+ },
+ "nader_42b5f32c": {
+  "file": "nader_42b5f32c.mp3",
+  "npc": "nader"
+ },
+ "mona_5c618b91": {
+  "file": "mona_5c618b91.mp3",
+  "npc": "mona"
+ },
+ "mona_2d59d65a": {
+  "file": "mona_2d59d65a.mp3",
+  "npc": "mona"
+ },
+ "mona_3c1982c7": {
+  "file": "mona_3c1982c7.mp3",
+  "npc": "mona"
+ },
+ "mona_b840c44d": {
+  "file": "mona_b840c44d.mp3",
+  "npc": "mona"
+ },
+ "mona_24f12dab": {
+  "file": "mona_24f12dab.mp3",
+  "npc": "mona"
+ },
+ "mona_ed093e36": {
+  "file": "mona_ed093e36.mp3",
+  "npc": "mona"
+ },
+ "mona_f0a51daf": {
+  "file": "mona_f0a51daf.mp3",
+  "npc": "mona"
+ },
+ "mona_7a16ef2d": {
+  "file": "mona_7a16ef2d.mp3",
+  "npc": "mona"
+ },
+ "mona_2474ce29": {
+  "file": "mona_2474ce29.mp3",
+  "npc": "mona"
+ },
+ "mona_fcbecdab": {
+  "file": "mona_fcbecdab.mp3",
+  "npc": "mona"
+ },
+ "mona_b2ad0783": {
+  "file": "mona_b2ad0783.mp3",
+  "npc": "mona"
+ },
+ "mona_9292e75e": {
+  "file": "mona_9292e75e.mp3",
+  "npc": "mona"
+ },
+ "mona_c8acd019": {
+  "file": "mona_c8acd019.mp3",
+  "npc": "mona"
+ },
+ "mona_06fe9311": {
+  "file": "mona_06fe9311.mp3",
+  "npc": "mona"
+ },
+ "mona_28891095": {
+  "file": "mona_28891095.mp3",
+  "npc": "mona"
+ },
+ "mona_428ba374": {
+  "file": "mona_428ba374.mp3",
+  "npc": "mona"
+ },
+ "mona_a28a4f7a": {
+  "file": "mona_a28a4f7a.mp3",
+  "npc": "mona"
+ },
+ "mona_0b4d421e": {
+  "file": "mona_0b4d421e.mp3",
+  "npc": "mona"
+ },
+ "mona_1053f8ad": {
+  "file": "mona_1053f8ad.mp3",
+  "npc": "mona"
+ },
+ "mona_17dc4470": {
+  "file": "mona_17dc4470.mp3",
+  "npc": "mona"
+ },
+ "mona_8d9ff2e3": {
+  "file": "mona_8d9ff2e3.mp3",
+  "npc": "mona"
+ },
+ "mona_96830890": {
+  "file": "mona_96830890.mp3",
+  "npc": "mona"
+ },
+ "mona_0e6ef4dc": {
+  "file": "mona_0e6ef4dc.mp3",
+  "npc": "mona"
+ },
+ "mona_e60fc770": {
+  "file": "mona_e60fc770.mp3",
+  "npc": "mona"
+ },
+ "karim_cc275fb4": {
+  "file": "karim_cc275fb4.mp3",
+  "npc": "karim"
+ },
+ "karim_d5a6cb9d": {
+  "file": "karim_d5a6cb9d.mp3",
+  "npc": "karim"
+ },
+ "karim_56004c19": {
+  "file": "karim_56004c19.mp3",
+  "npc": "karim"
+ },
+ "karim_ed4ec76d": {
+  "file": "karim_ed4ec76d.mp3",
+  "npc": "karim"
+ },
+ "karim_2ea53e97": {
+  "file": "karim_2ea53e97.mp3",
+  "npc": "karim"
+ },
+ "karim_341bdf43": {
+  "file": "karim_341bdf43.mp3",
+  "npc": "karim"
+ },
+ "karim_28caa503": {
+  "file": "karim_28caa503.mp3",
+  "npc": "karim"
+ },
+ "karim_0482e6fe": {
+  "file": "karim_0482e6fe.mp3",
+  "npc": "karim"
+ },
+ "karim_15f8515b": {
+  "file": "karim_15f8515b.mp3",
+  "npc": "karim"
+ },
+ "karim_0d80eb1f": {
+  "file": "karim_0d80eb1f.mp3",
+  "npc": "karim"
+ },
+ "karim_81dc4b1b": {
+  "file": "karim_81dc4b1b.mp3",
+  "npc": "karim"
+ },
+ "karim_c9b051ac": {
+  "file": "karim_c9b051ac.mp3",
+  "npc": "karim"
+ },
+ "karim_8fecf74e": {
+  "file": "karim_8fecf74e.mp3",
+  "npc": "karim"
+ },
+ "karim_d45c48e8": {
+  "file": "karim_d45c48e8.mp3",
+  "npc": "karim"
+ },
+ "karim_679e7b90": {
+  "file": "karim_679e7b90.mp3",
+  "npc": "karim"
+ },
+ "karim_50d99b9d": {
+  "file": "karim_50d99b9d.mp3",
+  "npc": "karim"
+ },
+ "karim_95c2558f": {
+  "file": "karim_95c2558f.mp3",
+  "npc": "karim"
+ },
+ "karim_2fc57e3f": {
+  "file": "karim_2fc57e3f.mp3",
+  "npc": "karim"
+ },
+ "karim_7f0a34ce": {
+  "file": "karim_7f0a34ce.mp3",
+  "npc": "karim"
+ },
+ "karim_112ed352": {
+  "file": "karim_112ed352.mp3",
+  "npc": "karim"
+ },
+ "karim_dbd3e4e3": {
+  "file": "karim_dbd3e4e3.mp3",
+  "npc": "karim"
+ },
+ "karim_a8334b89": {
+  "file": "karim_a8334b89.mp3",
+  "npc": "karim"
+ },
+ "karim_cd68dd79": {
+  "file": "karim_cd68dd79.mp3",
+  "npc": "karim"
+ },
+ "karim_5e2bedc6": {
+  "file": "karim_5e2bedc6.mp3",
+  "npc": "karim"
+ },
+ "karim_044c453a": {
+  "file": "karim_044c453a.mp3",
+  "npc": "karim"
+ },
+ "karim_81c1cf14": {
+  "file": "karim_81c1cf14.mp3",
+  "npc": "karim"
+ },
+ "karim_77ad7bf5": {
+  "file": "karim_77ad7bf5.mp3",
+  "npc": "karim"
+ },
+ "karim_d394d982": {
+  "file": "karim_d394d982.mp3",
+  "npc": "karim"
+ },
+ "karim_9251d922": {
+  "file": "karim_9251d922.mp3",
+  "npc": "karim"
+ },
+ "karim_425605de": {
+  "file": "karim_425605de.mp3",
+  "npc": "karim"
+ },
+ "karim_e1788ae9": {
+  "file": "karim_e1788ae9.mp3",
+  "npc": "karim"
+ },
+ "karim_23d91538": {
+  "file": "karim_23d91538.mp3",
+  "npc": "karim"
+ },
+ "salim_c3c9f47f": {
+  "file": "salim_c3c9f47f.mp3",
+  "npc": "salim"
+ },
+ "salim_175a987f": {
+  "file": "salim_175a987f.mp3",
+  "npc": "salim"
+ },
+ "salim_b24e9b4b": {
+  "file": "salim_b24e9b4b.mp3",
+  "npc": "salim"
+ },
+ "salim_65ed0b91": {
+  "file": "salim_65ed0b91.mp3",
+  "npc": "salim"
+ },
+ "salim_b9867fa9": {
+  "file": "salim_b9867fa9.mp3",
+  "npc": "salim"
+ },
+ "salim_322622e1": {
+  "file": "salim_322622e1.mp3",
+  "npc": "salim"
+ },
+ "salim_6b86a406": {
+  "file": "salim_6b86a406.mp3",
+  "npc": "salim"
+ },
+ "salim_55505eb5": {
+  "file": "salim_55505eb5.mp3",
+  "npc": "salim"
+ },
+ "salim_9d878d51": {
+  "file": "salim_9d878d51.mp3",
+  "npc": "salim"
+ },
+ "salim_b593aa85": {
+  "file": "salim_b593aa85.mp3",
+  "npc": "salim"
+ },
+ "salim_a0b336da": {
+  "file": "salim_a0b336da.mp3",
+  "npc": "salim"
+ },
+ "salim_d0810159": {
+  "file": "salim_d0810159.mp3",
+  "npc": "salim"
+ },
+ "karim_237b3288": {
+  "file": "karim_237b3288.mp3",
+  "npc": "karim"
+ },
+ "karim_ee1117a9": {
+  "file": "karim_ee1117a9.mp3",
+  "npc": "karim"
+ },
+ "karim_fe4eb695": {
+  "file": "karim_fe4eb695.mp3",
+  "npc": "karim"
+ }
+}

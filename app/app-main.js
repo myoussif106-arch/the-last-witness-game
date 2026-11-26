@@ -10,6 +10,8 @@ protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { standard: true, secure: true, supportFetchAPI: true, corsEnabled: true, stream: true } },
 ]);
 
+// automated tests use a throw-away profile so they never touch the player's real save
+if (process.env.LW_USERDATA) app.setPath('userData', process.env.LW_USERDATA);
 if (process.env.LW_ANGLE) app.commandLine.appendSwitch('use-angle', process.env.LW_ANGLE);
 app.commandLine.appendSwitch('enable-gpu-rasterization');
 app.commandLine.appendSwitch('ignore-gpu-blocklist');

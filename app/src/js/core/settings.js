@@ -1,5 +1,5 @@
 export const DEFAULT_SETTINGS = {
-  master: 0.8, music: 0.45, sfx: 0.8, ambient: 0.7,
+  master: 0.8, music: 0.45, sfx: 0.8, ambient: 0.7, voice: 0.95,
   sensitivity: 1.0, invertY: false, fov: 70,
   quality: 'high',          // low | medium | high | ultra
   postfx: true, shadows: true,

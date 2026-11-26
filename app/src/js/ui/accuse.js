@@ -94,6 +94,19 @@ export class AccuseUI {
     await this.showResult(r, story);
   }
 
+  async speakConfession(lines) {
+    this._confessionToken = {};
+    const token = this._confessionToken;
+    await wait(1800);
+    for (const [npc, text] of lines) {
+      if (token !== this._confessionToken || this.res.classList.contains('hidden')) return;
+      const buf = await this.inv.voiceBuffer(npc, text);
+      if (!buf) return;
+      await audio.playVoice(buf).ended;
+      await wait(500);
+    }
+  }
+
   async showResult(r, story) {
     const inv = this.inv, A = inv.data.accusation;
     audio.stopMusic();
@@ -115,9 +128,10 @@ export class AccuseUI {
       `}
       <div class="actions"></div></div>`;
     show(this.res, true);
+    if (r.passed) this.speakConfession(A.confession);
     const actions = this.res.querySelector('.actions');
     return new Promise(resolve => {
-      const btn = (t, cls, fn) => { const b = h(`<button class="btn ${cls}">${t}</button>`); b.onclick = () => { audio.click(); show(this.res, false); fn(); resolve(); this.close(true); }; actions.appendChild(b); };
+      const btn = (t, cls, fn) => { const b = h(`<button class="btn ${cls}">${t}</button>`); b.onclick = () => { audio.click(); audio.stopVoice(); this._confessionToken = null; show(this.res, false); fn(); resolve(); this.close(true); }; actions.appendChild(b); };
       if (r.passed) {
         btn('العودة إلى القائمة الرئيسية', 'primary', () => inv.app.toMenu());
         btn('أكمل استكشاف المكان', '', () => inv.resume());

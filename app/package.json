@@ -1,7 +1,7 @@
 {
   "name": "the-last-witness",
   "productName": "الشاهد الأخير - The Last Witness",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "لعبة تحقيق ثلاثية الأبعاد من منظور الشخص الأول",
   "main": "main.js",
   "updateRepo": "myoussif106-arch/the-last-witness-game",
@@ -22,6 +22,7 @@
     "three": "^0.170.0"
   },
   "devDependencies": {
-    "electron": "^33.2.1"
+    "electron": "^33.2.1",
+    "msedge-tts": "^2.1.1"
   }
 }

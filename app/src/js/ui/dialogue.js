@@ -70,11 +70,17 @@ export class DialogueUI {
       this.sub.innerHTML = (name ? `<span class="spk">${esc(name)}</span>` : '') + '<span class="tx"></span>';
       const tx = this.sub.querySelector('.tx');
       const cps = 15 * (this.inv.settings.textSpeed || 1);
-      if (spk === 'npc') this.ch.speak(text, cps); else this.ch.setState('listen');
+      let voice = null;
+      if (spk === 'npc') {
+        const buf = await this.inv.voiceBuffer(this.npcId, text);
+        if (buf && this.active) voice = audio.playVoice(buf);
+        this.ch.speak(text, cps, voice);
+      } else this.ch.setState('listen');
       this.cont.textContent = '';
-      await this._typewrite(tx, text, spk === 'npc' ? cps : cps * 2.2);
+      await this._typewrite(tx, text, voice ? Math.max(8, [...text].length / Math.max(0.5, voice.duration * 0.85)) : spk === 'npc' ? cps : cps * 2.2);
       this.cont.innerHTML = 'انقر أو اضغط <kbd>Space</kbd> للمتابعة';
       await new Promise(r => { this._advance = () => { this._advance = null; r(); }; });
+      audio.stopVoice();
       this.ch.stopSpeaking();
       audio.click();
     }
@@ -183,6 +189,7 @@ export class DialogueUI {
     if (!this.active) return;
     this.active = false;
     show(this.el, false);
+    audio.stopVoice();
     if (this.ch) this.ch.stopSpeaking();
     this.inv.exitDialogue(this.ch);
     if (this.inv.pendingAccusation) { this.inv.pendingAccusation = false; this.inv.openAccusation(); }

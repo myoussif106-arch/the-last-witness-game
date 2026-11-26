@@ -1,5 +1,6 @@
 import * as THREE from 'three';
-import { Assets } from '../engine/assets.js';
+import { Assets, assetURL } from '../engine/assets.js';
+import { voiceKey } from '../core/voicekey.js';
 import { Physics } from '../engine/physics.js';
 import { Player } from '../engine/player.js';
 import { World } from '../engine/world.js';
@@ -47,6 +48,8 @@ export class Investigation {
     this.applySettings();
     Assets.resetProgress(); Assets.onProgress = onProgress;
     try { const env = await Assets.hdri(this.mod.hdri); scene.environment = env; scene.environmentIntensity = 0.35; } catch (e) { console.warn(e); }
+    // recorded character voices (assets/voice/<case>/index.json); the game stays silent-but-subtitled without them
+    this.voiceIndex = await fetch(assetURL(`voice/${this.mod.id}/index.json`)).then(r => (r.ok ? r.json() : {})).catch(() => ({}));
     this.ctx = { flags: {}, inspectModels: {}, images: {}, humSources: [], lightningLights: [], clockPos: null };
     await this.mod.buildLevel(this.world, this.ctx); // characters
     await Promise.all(this.mod.npcs.map(async def => {
@@ -302,6 +305,13 @@ export class Investigation {
     this.hintOnce('dd1', 'الاستنتاجات تُضاف إلى الملف، ويمكنك مواجهة المشتبه بهم بها وتقديمها كأدلة في الاتهام النهائي.', 8000);
     this.refreshObjectives();
     return true;
+  }
+
+  async voiceBuffer(npc, text) {
+    const e = this.voiceIndex && this.voiceIndex[voiceKey(npc, text)];
+    if (!e) return null;
+    audio.init();
+    return audio.loadVoice(assetURL(`voice/${this.mod.id}/${e.file}`));
   }
 
   findDeduction(a, b) {

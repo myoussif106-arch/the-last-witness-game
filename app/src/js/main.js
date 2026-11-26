@@ -35,7 +35,7 @@ class App {
 
   applySettings(changed) {
     const s = this.game.settings;
-    audio.setVolumes({ master: s.master, music: s.music, sfx: s.sfx, ambient: s.ambient });
+    audio.setVolumes({ master: s.master, music: s.music, sfx: s.sfx, ambient: s.ambient, voice: s.voice });
     if (this.inv) this.inv.applySettings();
     if (changed === 'quality' || changed === 'shadows' || changed === 'postfx') this.renderer.applySettings(s);
     if (changed === 'fullscreen' && window.native) window.native.setFullscreen(s.fullscreen);

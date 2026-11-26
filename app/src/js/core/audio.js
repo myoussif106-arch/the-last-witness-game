@@ -2,7 +2,8 @@
 export class AudioEngine {
   constructor() {
     this.ctx = null;
-    this.vol = { master: 0.8, music: 0.5, sfx: 0.8, ambient: 0.7 };
+    this.vol = { master: 0.8, music: 0.5, sfx: 0.8, ambient: 0.7, voice: 0.95 };
+    this.voiceCache = new Map();
     this.spatial = [];
   }
 
@@ -11,13 +12,13 @@ export class AudioEngine {
     const ctx = this.ctx = new (window.AudioContext || window.webkitAudioContext)();
     this.master = ctx.createGain();
     this.master.connect(ctx.destination);
-    this.musicBus = ctx.createGain(); this.sfxBus = ctx.createGain(); this.ambBus = ctx.createGain();
+    this.musicBus = ctx.createGain(); this.sfxBus = ctx.createGain(); this.ambBus = ctx.createGain(); this.voiceBus = ctx.createGain();
     // shared reverb
     this.reverb = ctx.createConvolver();
     this.reverb.buffer = this._impulse(3.2, 2.5);
     const revGain = ctx.createGain(); revGain.gain.value = 0.35;
     this.reverb.connect(revGain).connect(this.master);
-    for (const b of [this.musicBus, this.sfxBus, this.ambBus]) b.connect(this.master);
+    for (const b of [this.musicBus, this.sfxBus, this.ambBus, this.voiceBus]) b.connect(this.master);
     this.musicBus.connect(this.reverb);
     this.noiseBuf = this._noise(4);
     this.applyVolumes();
@@ -33,6 +34,7 @@ export class AudioEngine {
     this.musicBus.gain.setTargetAtTime(this.vol.music * 0.55, t, 0.05);
     this.sfxBus.gain.setTargetAtTime(this.vol.sfx, t, 0.05);
     this.ambBus.gain.setTargetAtTime(this.vol.ambient, t, 0.05);
+    this.voiceBus.gain.setTargetAtTime(this.vol.voice ?? 0.95, t, 0.05);
   }
 
   _noise(sec) {
@@ -195,6 +197,35 @@ export class AudioEngine {
     if (this.musicOut) { const o = this.musicOut; o.gain.setTargetAtTime(0, this.ctx.currentTime, 0.8); setTimeout(() => o.disconnect(), 4000); }
     this.musicTimer = null; this.musicOut = null;
   }
+
+  // ---------- Character voices ----------
+  async loadVoice(url) {
+    if (!this.ctx) return null;
+    if (!this.voiceCache.has(url)) {
+      this.voiceCache.set(url, fetch(url).then(r => (r.ok ? r.arrayBuffer() : null)).then(b => (b ? this.ctx.decodeAudioData(b) : null)).catch(() => null));
+    }
+    return this.voiceCache.get(url);
+  }
+  // Plays a decoded line. Returns { duration, ended, stop(), level() } where level() is the
+  // current loudness (0..1) used to open and close the character's mouth.
+  playVoice(buffer) {
+    const ctx = this.ctx;
+    this.stopVoice();
+    const src = ctx.createBufferSource(); src.buffer = buffer;
+    const an = ctx.createAnalyser(); an.fftSize = 512;
+    src.connect(an); an.connect(this.voiceBus);
+    const data = new Float32Array(an.fftSize);
+    let done; const ended = new Promise(r => (done = r));
+    src.onended = () => { done(); if (this.voice && this.voice.src === src) this.voice = null; };
+    src.start();
+    const v = this.voice = {
+      src, duration: buffer.duration, ended,
+      stop: () => { try { src.stop(); } catch {} },
+      level: () => { an.getFloatTimeDomainData(data); let s = 0; for (let i = 0; i < data.length; i++) s += data[i] * data[i]; return Math.min(1, Math.sqrt(s / data.length) * 7); },
+    };
+    return v;
+  }
+  stopVoice() { if (this.voice) { this.voice.stop(); this.voice = null; } }
 
   // ---------- SFX ----------
   _env(node, t, a, peak, d) { node.gain.setValueAtTime(0.0001, t); node.gain.exponentialRampToValueAtTime(peak, t + a); node.gain.exponentialRampToValueAtTime(0.0001, t + a + d); }
