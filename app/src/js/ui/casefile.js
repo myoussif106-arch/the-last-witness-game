@@ -22,7 +22,7 @@ export class CaseFileUI {
   render() {
     const inv = this.inv, g = inv.g, cs = g.cs, d = inv.data;
     const ev = Object.keys(cs.evidence), st = Object.keys(cs.statements), dd = Object.keys(cs.deductions);
-    const met = Object.keys(d.people).filter(p => cs.metNpcs[p] || p === 'hassan');
+    const met = Object.keys(d.people).filter(p => cs.metNpcs[p] || d.people[p].always);
     const tabs = [['status', 'حالة التحقيق', ''], ['evidence', 'الأدلة', ev.length], ['people', 'الأشخاص', met.length], ['statements', 'الأقوال', st.length], ['deductions', 'الاستنتاجات', dd.length], ['notes', 'ملاحظات المحقق', '']];
     this.el.innerHTML = `<div class="folder">
       <div class="x-close">✕ إغلاق (Tab)</div>
@@ -40,7 +40,7 @@ export class CaseFileUI {
         <p>${esc(e.text)}</p>
         ${(cs.evidence[id].details || []).map(did => { const dt = e.details.find(x => x.id === did); return dt ? `<div class="stmt"><b style="color:var(--gold)">${esc(dt.label)}:</b> ${esc(dt.text)}</div>` : ''; }).join('')}
         ${e.doc ? `<div class="stmt" style="font-family:var(--doc);white-space:pre-wrap">${esc(e.doc.body)}</div>` : ''}
-        ${id === 'ev_notepad' && cs.evidence[id].details.includes('rubbed') ? `<div class="stmt" style="font-family:var(--hand);font-size:20px;white-space:pre-wrap">${esc(e.rub)}</div>` : ''}
+        ${e.rub && cs.evidence[id].details.includes('rubbed') ? `<div class="stmt" style="font-family:var(--hand);font-size:20px;white-space:pre-wrap">${esc(e.rub)}</div>` : ''}
         <div style="margin-top:18px"><button class="btn" data-reinspect="${id}">افحص مرة أخرى</button></div>` };
     }, 'لم تجد أي دليل بعد. فتّش المكان وتفاعل مع الأشياء بزر E.');
     else if (T === 'people') this.listDetail(body, met, id => {

@@ -25,7 +25,7 @@ export const meta = {
 export const people = {
   salim: { name: 'الرقيب سليم', role: 'شرطي الدورية — زميلك', age: 34, gender: 'm', suspect: false,
     bio: 'أول من وصل إلى المكان. منظم وهادئ، ويثق في حدسك أكثر مما يثق في حدسه.' },
-  hassan: { name: 'حسن الشامي', role: 'صاحب الشقة — صائغ متقاعد', age: 68, gender: 'm', suspect: true,
+  hassan: { name: 'حسن الشامي', role: 'صاحب الشقة — صائغ متقاعد', age: 68, gender: 'm', suspect: true, always: true,
     bio: 'أرمل يعيش وحده منذ عشر سنوات. يذهب كل خميس إلى المقهى. يتحدث عن ساعة أبيه بحرقة، لكنه يتهرب حين يُسأل عن الدفتر.' },
   nader: { name: 'نادر الشامي', role: 'ابن أخ صاحب الشقة', age: 31, gender: 'm', suspect: true,
     bio: 'يعمل في مبيعات السيارات. يملك نسخة من مفتاح الشقة. متوتر، ويبدو أن عمه يشك فيه.' },

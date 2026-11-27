@@ -80,12 +80,13 @@ export class Investigation {
     if (cs.player) this.player.setPose(cs.player.x, cs.player.z, cs.player.yaw, 0);
     else this.player.setPose(this.mod.playerStart.x, this.mod.playerStart.z, this.mod.playerStart.yaw);
     for (const [i, open] of Object.entries(cs.doors || {})) if (this.world.doors[i]) this.world.doors[i].setOpenInstant(open);
-    if (this.g.has('ev_cabinet')) this.ctx.flags.cabOpen = true;
+    if (this.mod.restore) this.mod.restore(this.g, this.ctx);
     for (const [id, m] of Object.entries(cs.moods || {})) if (this.characters[id]) this.characters[id].setMood(m);
     // warm up a frame then capture portraits
     try { await this.renderer.renderer.compileAsync(scene, camera); } catch (e) { console.warn(e); }
     this.renderer.render(0.016);
     await this.capturePortraits(); this.captureThumbs();
+    Object.assign(this.portraits, this.ctx.portraits || {}); // people without a 3D character (e.g. a missing person)
     return this;
   }
 
@@ -136,7 +137,7 @@ export class Investigation {
   start() {
     window.addEventListener('keydown', this._onKey);
     document.addEventListener('pointerlockchange', this._onLock);
-    audio.startRain(1);
+    audio.startRain(this.mod.rain ?? 1);
     audio.startMusic('investigation');
     if (this.ctx.clockPos) audio.addClock(() => this.ctx.clockPos);
     for (const p of this.ctx.humSources) audio.addHum(p, 100, 0.02);

@@ -2,7 +2,7 @@
 export const CASES = [
   { id: 'case01', num: 1, title: 'الشقة المغلقة', difficulty: 1, module: './case01/case.js',
     teaser: 'ساعة ذهبية ودفتر أسود اختفيا من شقة مقفلة لم يُكسر بابها. سرقة بسيطة... أم شيء آخر؟' },
-  { id: 'case02', num: 2, title: 'اختفاء الموظف', difficulty: 2, module: null,
+  { id: 'case02', num: 2, title: 'اختفاء الموظف', difficulty: 2, module: './case02/case.js',
     teaser: 'محاسب يغادر مكتبه في منتصف النهار ولا يعود. زملاؤه يروون ثلاث قصص لا تتطابق.' },
   { id: 'case03', num: 3, title: 'الرسالة المجهولة', difficulty: 2, module: null,
     teaser: 'رسائل بلا توقيع تصل كل أسبوع إلى معلمة متقاعدة. من يعرف كل هذه الأسرار؟' },

@@ -43,7 +43,7 @@ export class BoardUI {
       ['الأدلة', Object.keys(g.cs.evidence)],
       ['الإفادات', Object.keys(g.cs.statements)],
       ['الاستنتاجات', Object.keys(g.cs.deductions)],
-      ['الأشخاص', Object.keys(d.people).filter(p => p !== 'salim' && (g.cs.metNpcs[p] || p === 'hassan')).map(p => 'p_' + p)],
+      ['الأشخاص', Object.keys(d.people).filter(p => p !== 'salim' && (g.cs.metNpcs[p] || d.people[p].always)).map(p => 'p_' + p)],
     ];
     for (const [label, ids] of groups) {
       if (!ids.length) continue;

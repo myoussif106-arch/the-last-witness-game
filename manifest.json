@@ -1,7 +1,7 @@
 {
- "version": "0.4.1",
- "date": "2026-11-27T00:32:12.747Z",
- "notes": "تحسينات داخلية في الأداء والاستقرار.",
+ "version": "0.5.0",
+ "date": "2026-11-27T08:15:32.191Z",
+ "notes": "- قضية جديدة: «اختفاء الموظف» — محاسب يختفي من مكتبه في منتصف النهار، وثلاثة زملاء يروون قصصًا لا تتطابق. تُفتح بعد حل القضية الأولى.",
  "files": {
   "main.js": {
    "sha256": "e64bc380a60814353adf8489ccf87c6054aa00acd05e306ec96a083c4f624f9b",
@@ -20,7 +20,7 @@
    "size": 957
   },
   "package.json": {
-   "sha256": "5d3142f22604b3fc0cec3d2438fabf230d7f0fd3c63dcb1f9357d729811fa3fe",
+   "sha256": "1ac99a8707295edbefb538197f399a2b8dfca8b7e75a66e93068476988829ff3",
    "size": 1014
   },
   "THIRD_PARTY_LICENSES.txt": {
@@ -56,20 +56,32 @@
    "size": 2761
   },
   "src/js/cases/case01/case.js": {
-   "sha256": "2b16daf8bc80d6774912c006bfb075ee628d6ec90a5ad6416616e979c35ae3b0",
-   "size": 659
+   "sha256": "15d2e3611284671a75a116c315e943c9539cd12f061babce7fb05cd7d695624e",
+   "size": 832
   },
   "src/js/cases/case01/data.js": {
-   "sha256": "a5a0bd53cadd4ff07ac8249f05e8e6af6f6a0fb8454ac47d57c838b0e5a317f7",
-   "size": 55973
+   "sha256": "674e901f7b4493694169424af448a1fcf48b944e4e4f00fe7b685c14975c9076",
+   "size": 55987
   },
   "src/js/cases/case01/level.js": {
    "sha256": "55a8927ca178c44d1affbb00b969d2f36d1144e1d39953102ec56d792d0ca477",
    "size": 50273
   },
+  "src/js/cases/case02/case.js": {
+   "sha256": "ff72d0e97368ef58aa46aecbd2b4cadbb5209e3ce07373a826ba9e0103148098",
+   "size": 793
+  },
+  "src/js/cases/case02/data.js": {
+   "sha256": "00345c40fb35d69e9b42578c1a0562bc792670a2271ec07eacf96ef0ef7494da",
+   "size": 64490
+  },
+  "src/js/cases/case02/level.js": {
+   "sha256": "40c91b1d1056f4797c504d36061f722d4d331b43ca2f068c5eda8f063142949e",
+   "size": 56611
+  },
   "src/js/cases/index.js": {
-   "sha256": "e9917b8df8c559745318cabc5c5ebcb6ede308379be683fcc6155b2e5b29f91d",
-   "size": 2651
+   "sha256": "ca0982c82e25512b0fac43dab07cc7f7bc03eb6918b20f0b47f924651e436cb4",
+   "size": 2665
   },
   "src/js/core/audio.js": {
    "sha256": "6eef561a5c355d5b736a57becf1371e20a466c9504c45bb21cd117aec370a76b",
@@ -124,8 +136,8 @@
    "size": 23418
   },
   "src/js/game/investigation.js": {
-   "sha256": "7e44970afb75a6153f2ab68785de2e88038744d4337b3e1c88d9baa42b52af83",
-   "size": 24127
+   "sha256": "bb4ab80a39e2e0b5c1481da28e5b5bf2ce8de7d80791ac619ed245cae4ed2539",
+   "size": 24259
   },
   "src/js/game/state.js": {
    "sha256": "62d3afed5c84e90b6f1e41bb503085f40e24d564fe207952cf0dcceb1c6f6165",
@@ -140,12 +152,12 @@
    "size": 9845
   },
   "src/js/ui/board.js": {
-   "sha256": "6bc7a96f6aaa77358182d8d30defd863c4988cb49d7da5d1d8d7e5d889c568f5",
-   "size": 8817
+   "sha256": "1ad908cc9bcac6eabee44c1bbe69e432c1e66e995bb343ca6948efaba9a05d84",
+   "size": 8821
   },
   "src/js/ui/casefile.js": {
-   "sha256": "ddc9fa177ea4b3d64bf0ff385796d3110cd9e20b9b4be7964018385715ec365e",
-   "size": 9216
+   "sha256": "f6b9db64e52a4775be59b89bba6914744eebda6b319fffbf6fe81ec11b8d0496",
+   "size": 9206
   },
   "src/js/ui/dialogue.js": {
    "sha256": "388baae6b6edde3ea43f97f0dd8951147e0dca0d597f44f21ee5575562524569",
@@ -323,6 +335,34 @@
    "sha256": "28332f11ac8af1dfde73dc028b6749a9c71b38c9ded476e77f16ff6522f12be0",
    "size": 194358
   },
+  "assets/characters/hisham/body_color.jpg": {
+   "sha256": "b7f0d1cb236608affa89bc99d23e4c5163266e906949dc1b68ae97d3e570a333",
+   "size": 656445
+  },
+  "assets/characters/hisham/body_normal.jpg": {
+   "sha256": "8d04f1a7d5ff0e72827b7497194b2ecc178292bf844fcf624febc2b563a63f0c",
+   "size": 207594
+  },
+  "assets/characters/hisham/body_specular.jpg": {
+   "sha256": "33bdbb95e6907bb26a18710f82fd93c6134bdfb69d4b1e208d6be14aa89fd4a0",
+   "size": 43044
+  },
+  "assets/characters/hisham/head_color.jpg": {
+   "sha256": "ec665bec56643902a61a0f21c6d2728a73226e194a944b5a6289590ebb1781d6",
+   "size": 690392
+  },
+  "assets/characters/hisham/head_normal.jpg": {
+   "sha256": "084e0510b2fe406e407e823c8f1786190adcebd5f192b56361bbc93379dcf04c",
+   "size": 98032
+  },
+  "assets/characters/hisham/head_specular.jpg": {
+   "sha256": "eba47d93dfa1eb71af54cc0dac404c137432b621e7291d6d8ff34f495ec16d02",
+   "size": 120885
+  },
+  "assets/characters/hisham/model.fbx": {
+   "sha256": "af940f866c1bc087c816999fd68941b9b370ed36084bf54b80a0ff3985c47e70",
+   "size": 1804720
+  },
   "assets/characters/karim/body_color.jpg": {
    "sha256": "02e5b7126c1598e4a84dd3a8b661b3e84208dee3aef34a838f8ed65ddbf42469",
    "size": 585095
@@ -423,6 +463,70 @@
    "sha256": "6766a84345d2483556eb710174e89048dd51e7e2dd4e4ffff0dba06d82020008",
    "size": 193097
   },
+  "assets/characters/noha/body_color.jpg": {
+   "sha256": "2b33125ceb5eb711089cb92bdf875aefdcb28d45ad474ea5f1bb82439ca98272",
+   "size": 553727
+  },
+  "assets/characters/noha/body_normal.jpg": {
+   "sha256": "c3c2d509687936d5a73da11a211f937b6a110806126f92550c0bdceee48d66f4",
+   "size": 109324
+  },
+  "assets/characters/noha/body_specular.jpg": {
+   "sha256": "fa79532250e110fa4eae6c21719055db5450c1732d64530216f812d30e1084e6",
+   "size": 26879
+  },
+  "assets/characters/noha/head_color.jpg": {
+   "sha256": "53cc0b402e68c1a63dd171cf5a1588750eaa855dab3c7c3e85d0c018246d3b4c",
+   "size": 734032
+  },
+  "assets/characters/noha/head_normal.jpg": {
+   "sha256": "f08b51ff1fde30d4409e68c30c10095799d725938dfaebcf0560836a45996a02",
+   "size": 121346
+  },
+  "assets/characters/noha/head_specular.jpg": {
+   "sha256": "bfc1f709afdfe41cadcf080e9932bebe043627a7e5834ecf41d2ee35fb52461e",
+   "size": 87170
+  },
+  "assets/characters/noha/model.fbx": {
+   "sha256": "3f2365c9e74c9c341d6656b80ce512f4131a5fa6450057d6ffe07a637134e00e",
+   "size": 2098688
+  },
+  "assets/characters/noha/opacity_color.jpg": {
+   "sha256": "f22cddec1da6260973a8ea219a9c673379c8af00f2d9adaa8b061fa4f19f4e29",
+   "size": 67796
+  },
+  "assets/characters/noha/opacity_color_alpha.jpg": {
+   "sha256": "0a5cd024dc2d273e9a062379bf9a92e8fe62a5f44d5a079ac506f375101e4de5",
+   "size": 68487
+  },
+  "assets/characters/saber/body_color.jpg": {
+   "sha256": "886ef3735081ecc48a070b8a0b5c2b6a5b4876cd090466f3039dedf9a65fab2c",
+   "size": 719349
+  },
+  "assets/characters/saber/body_normal.jpg": {
+   "sha256": "1dc93234b2be81e8fbaa3f032284550e4b3499e8acaa7c5a1aa0b59f3b85bcde",
+   "size": 195188
+  },
+  "assets/characters/saber/body_specular.jpg": {
+   "sha256": "85e0667a10ff348ac52cd3905d7ac76146b0353d2f008e0a2fbbc4f6271ca61c",
+   "size": 48498
+  },
+  "assets/characters/saber/head_color.jpg": {
+   "sha256": "1d6f8f410522e38461dd1b5f284c6ab8924eecb75cf340af9142e580eaacbb36",
+   "size": 815079
+  },
+  "assets/characters/saber/head_normal.jpg": {
+   "sha256": "d13738a2c33746b5041ea9e9aa9c9f0a69396c42fde4f87eb772abd7705014d8",
+   "size": 129187
+  },
+  "assets/characters/saber/head_specular.jpg": {
+   "sha256": "788e2c68b0cfc764c59e7d2f48c0b8a7ebd48023b9f6aa1ed6d3fcb8edc9df41",
+   "size": 103879
+  },
+  "assets/characters/saber/model.fbx": {
+   "sha256": "b6db6c4e264dcdb8735a91158c1d5f9f182d4a2f6a77f904a59e98c6af9d33bc",
+   "size": 1765696
+  },
   "assets/characters/salim/body_color.jpg": {
    "sha256": "375af52c1a83513fa415fe347f3fa88847fedebb4aab00cf6031cb1ea167b029",
    "size": 594500
@@ -475,6 +579,34 @@
    "sha256": "faecf6903a8477f0b85a570d5b224ed42ab43863381752cde509b7078b4cf3bb",
    "size": 104836
   },
+  "assets/characters/tarek/body_color.jpg": {
+   "sha256": "306287ec2d72712dcc2285a666e86d57f168a1d0aaf960812c06950cf13e0fb9",
+   "size": 524547
+  },
+  "assets/characters/tarek/body_normal.jpg": {
+   "sha256": "97870c8d8ec204fb9fc4767c8f7b5e90adfc99195e5023061e206f3fa3cf91c9",
+   "size": 121921
+  },
+  "assets/characters/tarek/body_specular.jpg": {
+   "sha256": "5819e13899dc7e9f69810ba79a6ccbbd0fd0012a654f922258e91da89d963fda",
+   "size": 32027
+  },
+  "assets/characters/tarek/head_color.jpg": {
+   "sha256": "41c2bd55db237983a2fc7829d5d1e4ca79161b0ac520316913e18925782659b5",
+   "size": 651128
+  },
+  "assets/characters/tarek/head_normal.jpg": {
+   "sha256": "8595bdb6aef0a2c474ff9dd2a8595f954db9386e5bbfc83394198058c8a0c131",
+   "size": 152906
+  },
+  "assets/characters/tarek/head_specular.jpg": {
+   "sha256": "2868f0c4becd4676a2994d379597f2ceb9c2b6cec23423264ec633f0a9c0b1bf",
+   "size": 79453
+  },
+  "assets/characters/tarek/model.fbx": {
+   "sha256": "5160c0c5f3cd153081e8caff98ecdf621913f3fa341d4ca892b531338ff5206e",
+   "size": 1817264
+  },
   "assets/hdri/lythwood_room.hdr": {
    "sha256": "c21b044a04e93a1828abcf3a8f03ad849cc5f15abfd8540d17f2a262578c5936",
    "size": 1487973
@@ -518,6 +650,26 @@
   "assets/models/ArmChair_01/textures/Armchair_01_nor_gl_1k.jpg": {
    "sha256": "f5e4a43a12e79537e53e27c2bd4c5296b3e191cd6b301afce9fafd9d38238dde",
    "size": 289916
+  },
+  "assets/models/binder_notebook/binder_notebook.bin": {
+   "sha256": "68e28e6fac708a6e172230c42debd990e48819566fa07f222415467b1034b9c0",
+   "size": 525488
+  },
+  "assets/models/binder_notebook/binder_notebook.gltf": {
+   "sha256": "714596552fad383ae3ca76d42038b03a20b6864d6ef5bc6d12620ac21fef1b1e",
+   "size": 4309
+  },
+  "assets/models/binder_notebook/textures/binder_notebook_arm_1k.jpg": {
+   "sha256": "c0bc38cd13e5ada9552c3a9b60f88c36acf9e672011d97d066a6c0148f01898a",
+   "size": 507028
+  },
+  "assets/models/binder_notebook/textures/binder_notebook_diff_1k.jpg": {
+   "sha256": "8591cce815138bd737c252dc12a4d9bf41bceb499ace7dbfef0725e64dadda2d",
+   "size": 533256
+  },
+  "assets/models/binder_notebook/textures/binder_notebook_nor_gl_1k.jpg": {
+   "sha256": "24b18d9792c3816337d7d09b30aed400a887747ea6beb04b23612b6e1210a29e",
+   "size": 319694
   },
   "assets/models/book_encyclopedia_set_01/book_encyclopedia_set_01.bin": {
    "sha256": "bbc726698b6e40ab5537b73e082f7bb4db97b9e6f978f52cdaf763dddc85d9ba",
@@ -570,6 +722,26 @@
   "assets/models/brass_vase_01/textures/brass_vase_01_nor_gl_1k.jpg": {
    "sha256": "dac5267183a708234e2640f89cde45df76c3927bbd5d2b280cb61fd7a4bd63ea",
    "size": 78223
+  },
+  "assets/models/cardboard_box_01/cardboard_box_01.bin": {
+   "sha256": "7212d43b4cb56459e46d31ab34dc7c310fcfbe170f4a588416dea07ae5628a4b",
+   "size": 381936
+  },
+  "assets/models/cardboard_box_01/cardboard_box_01.gltf": {
+   "sha256": "6038bcc5bba5a08a5f6643a265977e37e3d14553e62981e144c33a89f10b78e1",
+   "size": 2903
+  },
+  "assets/models/cardboard_box_01/textures/cardboard_box_01_arm_1k.jpg": {
+   "sha256": "5db63828d0f904c6a8d9c83afc912260b2a27261c15a28d06360519384574d2b",
+   "size": 398433
+  },
+  "assets/models/cardboard_box_01/textures/cardboard_box_01_diff_1k.jpg": {
+   "sha256": "122c7ba8c5935e289804a730b480677a4bffdf74a45c91970cba682df92e171c",
+   "size": 567741
+  },
+  "assets/models/cardboard_box_01/textures/cardboard_box_01_nor_gl_1k.jpg": {
+   "sha256": "d2d1f529a851966b65411b5094510dd9eba03cd5c0a89921f79325c377a8e8eb",
+   "size": 817424
   },
   "assets/models/ceramic_vase_02/ceramic_vase_02.bin": {
    "sha256": "b8e13a9fc140b563526afd11bb233d3a838f03abc779824504d89186dfaacd3a",
@@ -731,6 +903,26 @@
    "sha256": "348703512ca1215f8389e9108419c2d1a46537663db25f423c3ef900d20cfe61",
    "size": 119612
   },
+  "assets/models/drawer_cabinet/drawer_cabinet.bin": {
+   "sha256": "3460b9fe00ffbe779b7f7f2de3b159c214cfec275c06194add0eebd951ee14e9",
+   "size": 798852
+  },
+  "assets/models/drawer_cabinet/drawer_cabinet.gltf": {
+   "sha256": "899581e6a041644139a138f909c6ba001684cc55b5d1702e08f01094e20d0617",
+   "size": 8031
+  },
+  "assets/models/drawer_cabinet/textures/drawer_cabinet_arm_1k.jpg": {
+   "sha256": "8f8eefaaadcee247204c5658c2f4d9cac598222336918b01eb48e4190317788c",
+   "size": 124942
+  },
+  "assets/models/drawer_cabinet/textures/drawer_cabinet_diff_1k.jpg": {
+   "sha256": "0fe270409b54a5609662dda14afaa94af4bd3267dcd83dd824e05fa880d96efb",
+   "size": 150011
+  },
+  "assets/models/drawer_cabinet/textures/drawer_cabinet_nor_gl_1k.jpg": {
+   "sha256": "26d0904ad341353e095ef619d157a5f416be014500475976f1144827cc849faa",
+   "size": 61593
+  },
   "assets/models/fancy_picture_frame_01/fancy_picture_frame_01.bin": {
    "sha256": "5d5a01ce8b89f1fbea87bac0ca9ab24771f0d2827ab0308f19878007e45f442f",
    "size": 25948
@@ -762,6 +954,26 @@
   "assets/models/fancy_picture_frame_01/textures/fancy_picture_frame_01_rough_1k.jpg": {
    "sha256": "a393111f86fa9ffb8fa09f26c7f72a2a519f4120e9a68ee462280444a8a6055f",
    "size": 119837
+  },
+  "assets/models/fire_alarm/fire_alarm.bin": {
+   "sha256": "f65b6fe5ed53c248497fe833ac66d5b8c452e28db4b02b8d1b67109fcc2ce132",
+   "size": 112072
+  },
+  "assets/models/fire_alarm/fire_alarm.gltf": {
+   "sha256": "4a924f45a0f23036a938e06a251677f9654f39507f0e13d06cc4a0b05c83b959",
+   "size": 4264
+  },
+  "assets/models/fire_alarm/textures/fire_alarm_arm_1k.jpg": {
+   "sha256": "b98f4fe9f190b74581cdff5a9e075d42cd48c16c5f9aba321c5dfe8ce93058a7",
+   "size": 650243
+  },
+  "assets/models/fire_alarm/textures/fire_alarm_diff_1k.jpg": {
+   "sha256": "fc0558110922f7f5ae83e488b913857b576946a33ef46c89886f7c6de722e660",
+   "size": 540983
+  },
+  "assets/models/fire_alarm/textures/fire_alarm_nor_gl_1k.jpg": {
+   "sha256": "45aa3e47120decf5a28e81a2586e3a4c8d6cdb10ba5ceed66d905de74fe1dbb7",
+   "size": 642044
   },
   "assets/models/GothicBed_01/GothicBed_01.bin": {
    "sha256": "2276e86480c49dfb63a4671a9637621f88727708cf83342156c157a1d89f747b",
@@ -923,6 +1135,26 @@
    "sha256": "d3460756046001dd158c794aacb8bfe5b6277e5a07a1061975a6b6f9b4e4ef80",
    "size": 88074
   },
+  "assets/models/metal_office_desk/metal_office_desk.bin": {
+   "sha256": "65b558f41a75ad4822e31cc2a97eb34ed359199279a6bfbd650deb27cef78767",
+   "size": 229700
+  },
+  "assets/models/metal_office_desk/metal_office_desk.gltf": {
+   "sha256": "f07032a5ee89aacceebf10fd9fa192c22775ae81861cfb0bdb1594497179373c",
+   "size": 13510
+  },
+  "assets/models/metal_office_desk/textures/metal_office_desk_arm_1k.jpg": {
+   "sha256": "752916dd9bf8a163dc7e0d3673900791ee6d558bbe23894263ac92b42387f51b",
+   "size": 721614
+  },
+  "assets/models/metal_office_desk/textures/metal_office_desk_diff_1k.jpg": {
+   "sha256": "1f02e3e77e8f82a3600664c991bd45c1c187452d61e9ede4336c6f90f7fa3139",
+   "size": 470831
+  },
+  "assets/models/metal_office_desk/textures/metal_office_desk_nor_gl_1k.jpg": {
+   "sha256": "f57eb004937e46392151b803e0cb1d88983958d01ad11d93df78a82cfcc6c407",
+   "size": 170875
+  },
   "assets/models/metal_toolbox/metal_toolbox.bin": {
    "sha256": "fe5551028e5b398c78c86911abf549010f83831c30b01593ca3eb3d8ba7ceae7",
    "size": 468892
@@ -942,6 +1174,58 @@
   "assets/models/metal_toolbox/textures/metal_toolbox_nor_gl_1k.jpg": {
    "sha256": "7ba19a233bcfff9c3d95b62c3a992c8e19cb2d6355c98d6e12bdc756a8af44cf",
    "size": 572273
+  },
+  "assets/models/modern_arm_chair_01/modern_arm_chair_01.bin": {
+   "sha256": "8755f2f498c0bb165660379d1b045465751c16bbeaf553c8dd76bb14c16d1ff6",
+   "size": 240728
+  },
+  "assets/models/modern_arm_chair_01/modern_arm_chair_01.gltf": {
+   "sha256": "d31be520add2603447b43acedbdacf9516866f7c89e9ea9230c9edbac9cc6e6a",
+   "size": 5121
+  },
+  "assets/models/modern_arm_chair_01/textures/modern_arm_chair_01_legs_arm_1k.jpg": {
+   "sha256": "c76b65200a52cf649a865baf7f879dc34277b923edaac7ec8164eaf7c51c935d",
+   "size": 577931
+  },
+  "assets/models/modern_arm_chair_01/textures/modern_arm_chair_01_legs_diff_1k.jpg": {
+   "sha256": "6291421a8db6cd9bbbc8c141aa087465d698427249f813d24c6e5ccdbf0bf536",
+   "size": 460937
+  },
+  "assets/models/modern_arm_chair_01/textures/modern_arm_chair_01_legs_nor_gl_1k.jpg": {
+   "sha256": "af328e8530884907cf0d38a675338bb4e2b03c56ed2d21eb5abf505bb67c11de",
+   "size": 560864
+  },
+  "assets/models/modern_arm_chair_01/textures/modern_arm_chair_01_pillow_arm_1k.jpg": {
+   "sha256": "fec333290ddfd70e78428251874d30d5410d6d0a956dd84922b0d3f3596e4b7a",
+   "size": 321223
+  },
+  "assets/models/modern_arm_chair_01/textures/modern_arm_chair_01_pillow_diff_1k.jpg": {
+   "sha256": "f1935436b460ad5c03ac7ff9d1e1b4aaedcdc9a503d79c257beb8cdac2e9e1f7",
+   "size": 228851
+  },
+  "assets/models/modern_arm_chair_01/textures/modern_arm_chair_01_pillow_nor_gl_1k.jpg": {
+   "sha256": "2717b9d22e1d3533e3c7436a0230b00b1d25bf396246679825c8db08edaba0a8",
+   "size": 302377
+  },
+  "assets/models/modern_coffee_table_01/modern_coffee_table_01.bin": {
+   "sha256": "b8fe0d49041b879a5d5962685a39e3daf009679f7b6a88ced1347e6dc6c0851e",
+   "size": 154864
+  },
+  "assets/models/modern_coffee_table_01/modern_coffee_table_01.gltf": {
+   "sha256": "a35d811da4c174d0c888f23353dda21501763dbf5505c66f57fef4b3f613e50c",
+   "size": 2771
+  },
+  "assets/models/modern_coffee_table_01/textures/modern_coffee_table_01_diff_1k.jpg": {
+   "sha256": "069b89dd3ef03ddcbb7b2e6a124b1903aa7848394509121aa19f87bd0ef0218c",
+   "size": 410569
+  },
+  "assets/models/modern_coffee_table_01/textures/modern_coffee_table_01_nor_gl_1k.jpg": {
+   "sha256": "43e0d317d0f8418b130c0058c645225ee83b808b1dc0e5e7236bead3bdd77139",
+   "size": 359134
+  },
+  "assets/models/modern_coffee_table_01/textures/modern_coffee_table_01_rough_1k.jpg": {
+   "sha256": "8013b48b0ebb845907f840afcae9cbc915a5205ac82ed99cbba31771febacb0f",
+   "size": 403959
   },
   "assets/models/office_notepads/office_notepads.bin": {
    "sha256": "4095356347a19a2e64ee2f5cee46d50d9bdf7c52f617573bca94cfe6e494842c",
@@ -1003,6 +1287,38 @@
    "sha256": "b5bed424a1f8347d839add0f329fb856ea02ced5929f7cdb4f558f7ae581552c",
    "size": 92643
   },
+  "assets/models/potted_plant_01/potted_plant_01.bin": {
+   "sha256": "a8dd1f7ce75f50dc25bbedc20809da02ee4193815c155b883a329925fa5548f7",
+   "size": 5345188
+  },
+  "assets/models/potted_plant_01/potted_plant_01.gltf": {
+   "sha256": "23b30294407684b02f14800d6685bd8938da5d2111e17753ac8dd3c37d8c88a0",
+   "size": 7969
+  },
+  "assets/models/potted_plant_01/textures/potted_plant_01_leaves_diff_1k.jpg": {
+   "sha256": "b73891a0a606e139d0fcdd9e6fe503cd1210be3fc9c55fbd033941288231ccaa",
+   "size": 124730
+  },
+  "assets/models/potted_plant_01/textures/potted_plant_01_leaves_nor_gl_1k.jpg": {
+   "sha256": "2faa756e0ee2b8341c752b283b93599157bf56f4083a9f61b825cdfa0c7138ff",
+   "size": 177105
+  },
+  "assets/models/potted_plant_01/textures/potted_plant_01_leaves_rough_1k.jpg": {
+   "sha256": "765e3bd1bfdad39dd0d1cd755eafd1f9f1d46cbbb6013988cbfd1197de27a1f9",
+   "size": 91706
+  },
+  "assets/models/potted_plant_01/textures/potted_plant_01_pot_diff_1k.jpg": {
+   "sha256": "51c9d80e8abe585bd3dbcebe7cba1d3ed1a22b137c7cb66baf0e462c08dca312",
+   "size": 204900
+  },
+  "assets/models/potted_plant_01/textures/potted_plant_01_pot_nor_gl_1k.jpg": {
+   "sha256": "ec02e51751e0822d229d48bea1373b06e2675c3725ff04fd1f87ac516719e620",
+   "size": 200349
+  },
+  "assets/models/potted_plant_01/textures/potted_plant_01_pot_rough_1k.jpg": {
+   "sha256": "1256199fe3a88a0534bcd4c8bf141cfa9a28b68fce3f286193d0713796fd8561",
+   "size": 173192
+  },
   "assets/models/potted_plant_02/potted_plant_02.bin": {
    "sha256": "9c9812482c78a59789ed32fa842b4cbd9365e09c900c31ebb998e5efe627fe97",
    "size": 1852244
@@ -1034,6 +1350,26 @@
   "assets/models/potted_plant_02/textures/potted_plant_02_pot_rough_1k.jpg": {
    "sha256": "4e92ad8ee0f098050785d9a025e2c5a7d55bc7a7f7e1916cc7627fc7824a938f",
    "size": 114886
+  },
+  "assets/models/potted_plant_04/potted_plant_04.bin": {
+   "sha256": "158c1d27503d4845eb3573f00c01ae3f4f77f1d6ca8754c67bf1762745946f7f",
+   "size": 241800
+  },
+  "assets/models/potted_plant_04/potted_plant_04.gltf": {
+   "sha256": "b3a3bc3e97da75844999c4da07b7104b6c023f729a7c045979929b9504184339",
+   "size": 7081
+  },
+  "assets/models/potted_plant_04/textures/potted_plant_04_arm_1k.jpg": {
+   "sha256": "7f3288345570ef700c851ea382ed267490ffc8c901ccc31f2ec5507e4d098e48",
+   "size": 478413
+  },
+  "assets/models/potted_plant_04/textures/potted_plant_04_diff_1k.jpg": {
+   "sha256": "8693a971557fbafb12a24a2e23c1a04ab6b04ecdc4d26808c5ad3516a4971f24",
+   "size": 577545
+  },
+  "assets/models/potted_plant_04/textures/potted_plant_04_nor_gl_1k.jpg": {
+   "sha256": "66e4627f6691a2d8104a6c53a39b41daddbd5bad8103e73f372c39166a3dcb07",
+   "size": 817786
   },
   "assets/models/round_spectacles/round_spectacles.bin": {
    "sha256": "211ccd70fa6e46269c865921051cf77cfd19b5accf76e85e4c024b91c3347540",
@@ -1146,6 +1482,66 @@
   "assets/models/Sofa_01/textures/Sofa_01_nor_gl_1k.jpg": {
    "sha256": "1d89009f9fba3b6967d63cb718606b3049d2423bc031da12ee228718a0571e84",
    "size": 154517
+  },
+  "assets/models/sofa_02/sofa_02.bin": {
+   "sha256": "cb337e03211be0309afa1ded2b6cbb2d402c0f794aaf8828fba559d27a42d3f5",
+   "size": 74864
+  },
+  "assets/models/sofa_02/sofa_02.gltf": {
+   "sha256": "5df114209f9b956ccd4831eaeef469a81339ab371d0056eb6d5d29eee08eb431",
+   "size": 4183
+  },
+  "assets/models/sofa_02/textures/sofa_02_arm_1k.jpg": {
+   "sha256": "f2813f32cd9ec42a9080590d0953ac9e272d9baa0b22fdb5910bf325157393c6",
+   "size": 121752
+  },
+  "assets/models/sofa_02/textures/sofa_02_diff_1k.jpg": {
+   "sha256": "4ff65c782578b52eee89cb96cc4e258ce1b6848e1a7655019af1f7207c749840",
+   "size": 86514
+  },
+  "assets/models/sofa_02/textures/sofa_02_nor_gl_1k.jpg": {
+   "sha256": "c97a359703a8ce1cee62cbd9dc4013b611d821afb7769810983b464ebc5d0cfe",
+   "size": 139858
+  },
+  "assets/models/stationery_supplies/stationery_supplies.bin": {
+   "sha256": "475d839c3569551710607cfc71416aa50a3715cd02d56da8c86271982feacb6e",
+   "size": 128940
+  },
+  "assets/models/stationery_supplies/stationery_supplies.gltf": {
+   "sha256": "9f5ef7799af1193e5d794cc02eb6add2d2eb7e80bc1974930fae76b3cd7ce9a9",
+   "size": 15220
+  },
+  "assets/models/stationery_supplies/textures/stationery_supplies_arm_1k.jpg": {
+   "sha256": "b7b00e07f043d9928aa4b6dc6a3feede9c870e6e810ae75b54692171cfba6052",
+   "size": 720443
+  },
+  "assets/models/stationery_supplies/textures/stationery_supplies_diff_1k.jpg": {
+   "sha256": "a70e92052b2da3457a6059aec0fa83bc01bf0d376be814661cee0b49e4abb9ad",
+   "size": 646389
+  },
+  "assets/models/stationery_supplies/textures/stationery_supplies_nor_gl_1k.jpg": {
+   "sha256": "23c332f95ca9cafc24f51a1ad54ca81548d3ab60559401e793fdec00cbe7952c",
+   "size": 475821
+  },
+  "assets/models/steel_frame_shelves_02/steel_frame_shelves_02.bin": {
+   "sha256": "bcfe8e37632961b13f7ac845f7f2505181c394e7bd356c123a0ef7706aabd70d",
+   "size": 142344
+  },
+  "assets/models/steel_frame_shelves_02/steel_frame_shelves_02.gltf": {
+   "sha256": "df103b9fbb08a60e262cc1d8af5cb37f3c1231a8764eeacec23d363be24feca6",
+   "size": 2775
+  },
+  "assets/models/steel_frame_shelves_02/textures/steel_frame_shelves_02_arm_1k.jpg": {
+   "sha256": "7fbcad4858018270eec05cbcdfec886adf4de39a057a8fc15a3c1d1d009f0307",
+   "size": 199312
+  },
+  "assets/models/steel_frame_shelves_02/textures/steel_frame_shelves_02_diff_1k.jpg": {
+   "sha256": "2b41f59f3fbc6464e10ce11ee17c80f35173de8321865e4c4a966c55f5898f15",
+   "size": 144386
+  },
+  "assets/models/steel_frame_shelves_02/textures/steel_frame_shelves_02_nor_gl_1k.jpg": {
+   "sha256": "c0033947364a267d17307943df975bc9d81268b51532c73340dd0bf45d204990",
+   "size": 51446
   },
   "assets/models/tea_set_01/tea_set_01.bin": {
    "sha256": "5ddd90f031a71832842f9030c2f7f0aa07b2c96f3d3cc4aa5cfaa5dbb14aa7b0",
@@ -1302,6 +1698,26 @@
   "assets/models/vintage_pocket_watch/vintage_pocket_watch.gltf": {
    "sha256": "077f96a5d34b7d44d2f85c71574ebda3c68fcbbafe061f27bdf85236c61873d8",
    "size": 10104
+  },
+  "assets/models/vintage_stapler/textures/vintage_stapler_arm_1k.jpg": {
+   "sha256": "53592697b5c9088cf77d3fcb723dc7feebf5bb2889d2c33f1865ccd02be45774",
+   "size": 821614
+  },
+  "assets/models/vintage_stapler/textures/vintage_stapler_diff_1k.jpg": {
+   "sha256": "37bbfabfef6ee261dfcb63c99334af0389976ee3b58d80d279c4a430397ae020",
+   "size": 797565
+  },
+  "assets/models/vintage_stapler/textures/vintage_stapler_nor_gl_1k.jpg": {
+   "sha256": "b286c6a02bc757919962a7eaef4e6851df53844d3fcc31aed71c4d7a85c29b43",
+   "size": 536378
+  },
+  "assets/models/vintage_stapler/vintage_stapler.bin": {
+   "sha256": "7ffa9b1cc3722dd4de8cd754851884c3897f4e281ebe55defc7fc7d3223b27bf",
+   "size": 159080
+  },
+  "assets/models/vintage_stapler/vintage_stapler.gltf": {
+   "sha256": "0cd8f8200e4b9756cd7873a12567252c8fae9e74284b1a610b7cba760be39f2e",
+   "size": 7127
   },
   "assets/models/wall_clock/textures/wall_clock_arm_1k.jpg": {
    "sha256": "c78aabec7bb4af4fd6818be1099523e59bf12d88c872530b2260cdea08d81968",
@@ -1518,6 +1934,38 @@
   "assets/textures/kitchen_wood/rough.jpg": {
    "sha256": "38044a0b781b2d3219804bc045fc0d226bae33060cc18bb13355fb578ee98c73",
    "size": 875985
+  },
+  "assets/textures/laminate_floor_02/ao.jpg": {
+   "sha256": "456e26260c0b46171d4005701dd17c3c073fc325b65c3b2b2c9c2383d46c4a6b",
+   "size": 419048
+  },
+  "assets/textures/laminate_floor_02/diff.jpg": {
+   "sha256": "c112a8fb107d8600a2974af2f9fa9b595c491a33a59982e22706e9650990bf8f",
+   "size": 721641
+  },
+  "assets/textures/laminate_floor_02/nor.jpg": {
+   "sha256": "ec501e1c76269cabc1648ab0e3f38db1b062ffef7ff4ce037fdc369383afd005",
+   "size": 515725
+  },
+  "assets/textures/laminate_floor_02/rough.jpg": {
+   "sha256": "1d48d21a8497d83d4148e4378bf6891e052c98b58cdce1f79003bcc24a3aff8f",
+   "size": 560815
+  },
+  "assets/textures/large_grey_tiles/ao.jpg": {
+   "sha256": "b429c1d161d348d49c324a643e4ad8f5136036861f5014eff7472ab1a5a08645",
+   "size": 334662
+  },
+  "assets/textures/large_grey_tiles/diff.jpg": {
+   "sha256": "2cd00e2ddd516fdc165169252c194bf67b3ee483f2925442dc428cbae5fd04c8",
+   "size": 445476
+  },
+  "assets/textures/large_grey_tiles/nor.jpg": {
+   "sha256": "9185560cc045b0c90434c1bfe64922759a5bebfdad18a1b6af860ed0e332cfc8",
+   "size": 388446
+  },
+  "assets/textures/large_grey_tiles/rough.jpg": {
+   "sha256": "2042fd8d9775e4e91ca6474549e504ec08ded4664cb6b59890142d6fe97709c8",
+   "size": 377009
   },
   "assets/textures/marble_01/ao.jpg": {
    "sha256": "293647199a12dc369d19f8a2ca1f6ccdf305cb2bedc5f5e014c7bf8d0380d474",
@@ -2206,6 +2654,706 @@
   "assets/voice/case01/salim_d431236e.mp3": {
    "sha256": "b90a9cde4011f5a29ff991f9c9162931a631fd142c51116596a297d9638aab6d",
    "size": 54144
+  },
+  "assets/voice/case02/hisham_06cd0dbb.mp3": {
+   "sha256": "0a381b1c2e5d9583f6638b85ad54d1bead75d62dacd2782a1c43d459ec077a97",
+   "size": 21312
+  },
+  "assets/voice/case02/hisham_0c9a863c.mp3": {
+   "sha256": "4d44766dcbd5802d4c32006485238d20cf587f87ed703d620efd763d25634a9b",
+   "size": 53136
+  },
+  "assets/voice/case02/hisham_0e06d534.mp3": {
+   "sha256": "4e1a44e1843576be58a0b29ab804d41faad83e1616cb6da6e326dbe7baa3a4d8",
+   "size": 49824
+  },
+  "assets/voice/case02/hisham_1573ae79.mp3": {
+   "sha256": "22090b7cdcdf83213a950806a80d4f809089f9fba880eaeb1b1bf947e04983c8",
+   "size": 54000
+  },
+  "assets/voice/case02/hisham_1830a079.mp3": {
+   "sha256": "bd924ca6dabfb5c1ae2c34b9dec977ad639b659e6a9a4bcf13332e12ba13ddfa",
+   "size": 38592
+  },
+  "assets/voice/case02/hisham_1fb1ac11.mp3": {
+   "sha256": "0243766db89f249fd1a4341c0675010995da0ba707e0e1e1187d13b41854198b",
+   "size": 29520
+  },
+  "assets/voice/case02/hisham_22f7a88f.mp3": {
+   "sha256": "0fbd1779992195277a958c48b45a29550ffed620fc817c158d1a256a0f35f9cb",
+   "size": 19296
+  },
+  "assets/voice/case02/hisham_2b1aff2c.mp3": {
+   "sha256": "9dbad4a7f58fe8d396a15c61e44d17b05ffff54ed75eded997a7633d0dc3c2c7",
+   "size": 26784
+  },
+  "assets/voice/case02/hisham_35e44ac1.mp3": {
+   "sha256": "d8270c4fa4f7ef0455d485fc26783ecb4d882e152a776f4468e9df5d3e82b0b2",
+   "size": 45072
+  },
+  "assets/voice/case02/hisham_3620e2e0.mp3": {
+   "sha256": "7ab44befc4e9ffaec0747b6b712b9442333c9faf6494ff423857dc59b6dea7c8",
+   "size": 11232
+  },
+  "assets/voice/case02/hisham_3857c994.mp3": {
+   "sha256": "655831efdfc55104a375d9aa5ec0266b9ede787291cc1da7fdaad9b1332a6a34",
+   "size": 17136
+  },
+  "assets/voice/case02/hisham_3865f64a.mp3": {
+   "sha256": "b859fc477e4c57227b2ca7c20efa9425191c6c6254ed7ac545e041bf1e25bfb0",
+   "size": 33840
+  },
+  "assets/voice/case02/hisham_39017027.mp3": {
+   "sha256": "01802ad9c963b1c44cbca40b205dcd6b5dd0b70b06b516aa9b33d1e0a4162929",
+   "size": 67392
+  },
+  "assets/voice/case02/hisham_3e3bb1d0.mp3": {
+   "sha256": "f60311f1863ab77d2cdc9e26ea3c3f6733b37e16783ae85c0e91e705fe42156f",
+   "size": 40032
+  },
+  "assets/voice/case02/hisham_47aaf765.mp3": {
+   "sha256": "de7c7f56f4143a7aca0367c27eb4699f9627b3337fe18aaac27f56d29c16df5b",
+   "size": 38736
+  },
+  "assets/voice/case02/hisham_483fdeaa.mp3": {
+   "sha256": "53c7bd486bfa1c7543d723dea6a18944818668fe13fddb1358beb830bf58b1d7",
+   "size": 38736
+  },
+  "assets/voice/case02/hisham_48602427.mp3": {
+   "sha256": "324a8629d8ccad09e4888282a31a78576f2213370d10292dc9a99dde612a9ae0",
+   "size": 83808
+  },
+  "assets/voice/case02/hisham_4ab61b72.mp3": {
+   "sha256": "624de20c2f1c8bdf2be6cf6d2d7487f0bad11e9a2a97b6fe3e1fcbd5dc98ff0e",
+   "size": 40608
+  },
+  "assets/voice/case02/hisham_4b6f1604.mp3": {
+   "sha256": "4f737b809100d107c37f8e8f6d6626b8fb81df058986497c4c7763fb1857a7ff",
+   "size": 56304
+  },
+  "assets/voice/case02/hisham_4d0d5fbc.mp3": {
+   "sha256": "2084c12681d0dbb74add0e1cb278ee095ec3cf47be9c49cd9603ec3a99e30d86",
+   "size": 44496
+  },
+  "assets/voice/case02/hisham_51eb5fe3.mp3": {
+   "sha256": "2197d38a8ee370357218fbbf4e3399102afb77527672e30e253f4894b7c73ad8",
+   "size": 60624
+  },
+  "assets/voice/case02/hisham_5309b962.mp3": {
+   "sha256": "da603a4664d51bc94da1f9298434effe298a34fc08e959d7bdd190c1169e6ae4",
+   "size": 27360
+  },
+  "assets/voice/case02/hisham_57ab1c9a.mp3": {
+   "sha256": "c710bed18f74f8cb4f0f7071c9bdcf98b28b9e3735d4400faee37d743223f422",
+   "size": 30096
+  },
+  "assets/voice/case02/hisham_5aae45dc.mp3": {
+   "sha256": "f58e7880baccd3780946627220e132e8953c7ee2c0a5da7e0186225480f898fd",
+   "size": 64080
+  },
+  "assets/voice/case02/hisham_60ec6dd4.mp3": {
+   "sha256": "63977ffe3781033d3da6c589b8747fe09e1f729b132049e8ba7a4962108fbafa",
+   "size": 51696
+  },
+  "assets/voice/case02/hisham_62d7093a.mp3": {
+   "sha256": "4256d98e96436d1906231eb94bece3b05a26db2c6d78f397f16d28abf5d6d23c",
+   "size": 44928
+  },
+  "assets/voice/case02/hisham_638ae0b4.mp3": {
+   "sha256": "a9267886547048d8ccdec0896f43f428ba62277f1a8333d41f8cd747a62e22bf",
+   "size": 50112
+  },
+  "assets/voice/case02/hisham_65628b4e.mp3": {
+   "sha256": "77ec7c83c9332307b2b9e52cd1c034727f6fd9185b3f04b742a4806df7ef2ec3",
+   "size": 35568
+  },
+  "assets/voice/case02/hisham_6ec386b4.mp3": {
+   "sha256": "36cec26ff752e925fe615fbd8bc8a2f1ce54a7e4324be1e37a6078a4f2aeb39b",
+   "size": 37152
+  },
+  "assets/voice/case02/hisham_6fa1bdcc.mp3": {
+   "sha256": "170e76576d6afb5eb4424c15db00d525e0c0cd0bebfbbec61c4345a26ca43ca8",
+   "size": 54144
+  },
+  "assets/voice/case02/hisham_7211231f.mp3": {
+   "sha256": "7736e0fd1beafa8538aeda5247e279b1233a1cb177bdc5fd89106144277c3404",
+   "size": 34272
+  },
+  "assets/voice/case02/hisham_729e30ba.mp3": {
+   "sha256": "ad654a5ac4d5293d719d41ad81fda63b57d33296390c87a068d98fc0f856f7b2",
+   "size": 32400
+  },
+  "assets/voice/case02/hisham_77508ccd.mp3": {
+   "sha256": "2d774d60b7324b73b8a4db0455c19eb4225493f0e9ef88b979e7e53b50fad319",
+   "size": 61632
+  },
+  "assets/voice/case02/hisham_7ea2ca23.mp3": {
+   "sha256": "0ba82236c4e21cf28d80d289a00a0243364bcffa6a048006a219d71f82257446",
+   "size": 23904
+  },
+  "assets/voice/case02/hisham_86012156.mp3": {
+   "sha256": "5384da86745dfc1c2635a152afa96c798991c71eb36592de81ce37a47b06dfe3",
+   "size": 23760
+  },
+  "assets/voice/case02/hisham_87d3766f.mp3": {
+   "sha256": "7d7f336d8ddaf7df5bf44d1ce72b73d395bc4d13df9fed512ebd76369c1d6bae",
+   "size": 37152
+  },
+  "assets/voice/case02/hisham_87dfda6d.mp3": {
+   "sha256": "610cc6727cfa0a74455250acf8b609fba73bb65054ebc645b21149bd4228d896",
+   "size": 26064
+  },
+  "assets/voice/case02/hisham_8fdb067a.mp3": {
+   "sha256": "a635cdaee33ed1f0ba5546690af29c47e041cabfff294b505669361e3caba5f9",
+   "size": 42480
+  },
+  "assets/voice/case02/hisham_92812bbd.mp3": {
+   "sha256": "3fc6babc0735493320d1ef36865def26ddde04ce289b52a59a4beb3509d6e43a",
+   "size": 45504
+  },
+  "assets/voice/case02/hisham_9964e95e.mp3": {
+   "sha256": "f473c6ce4165dd9f632b19e659712017e6c95db4d29599de0f65d6aea4e22652",
+   "size": 58752
+  },
+  "assets/voice/case02/hisham_a34cfa52.mp3": {
+   "sha256": "32bac6bf6072365c41689014341b433c7de69b40c3bdd6fb087bea5128192dd1",
+   "size": 57600
+  },
+  "assets/voice/case02/hisham_b357241a.mp3": {
+   "sha256": "b077cf17b03b6bc2e8c04002b9b1944e6420b8d08d42914fb93b7cda19931c56",
+   "size": 60624
+  },
+  "assets/voice/case02/hisham_b36c0250.mp3": {
+   "sha256": "5f3412243c147f2d7371493831e3e62ccdf56f0d3118b3b0eea2c0f27fe2b76d",
+   "size": 40896
+  },
+  "assets/voice/case02/hisham_b6cdbfc6.mp3": {
+   "sha256": "fb1bee3d25bfb0d9b2464547c6cc80f63a856e0278c08bfe55db8f8107fdd020",
+   "size": 49968
+  },
+  "assets/voice/case02/hisham_c53b02dc.mp3": {
+   "sha256": "e082653b29e70642e6ad3f82bebd0cc9f70744797039b9ba7028909b10eb06c7",
+   "size": 11232
+  },
+  "assets/voice/case02/hisham_c5d3fb9a.mp3": {
+   "sha256": "cdd85f7ae3a95a89d5c62b85ec7c9af39dd6d99a212ba2e1403c295efbb52788",
+   "size": 32832
+  },
+  "assets/voice/case02/hisham_c92da7cf.mp3": {
+   "sha256": "973f67b0a084b1b8174c82e491bd680ebb32a2c5ea5ccbaeb23183655a2bfce8",
+   "size": 33696
+  },
+  "assets/voice/case02/hisham_deaeb6d3.mp3": {
+   "sha256": "5abee8b671181d43dfc31953e430220d0f20bb7bf185989223735f8e014c5118",
+   "size": 42192
+  },
+  "assets/voice/case02/hisham_e6d85e02.mp3": {
+   "sha256": "48bf864ab0edbbe7596c1d41214283d8825e90f7111f37699cf91151bfcca888",
+   "size": 66960
+  },
+  "assets/voice/case02/hisham_e7ac48fc.mp3": {
+   "sha256": "c53a68c71c4ff916ef85f6aa42d9409ac3ab5eb859cc91a1f11003236819dc28",
+   "size": 36000
+  },
+  "assets/voice/case02/hisham_ee6e5963.mp3": {
+   "sha256": "2d8418a808ae12600b8d960b40d9d33d291bad40b9ecaaf4accc7a473cc36bce",
+   "size": 46512
+  },
+  "assets/voice/case02/hisham_f50b7250.mp3": {
+   "sha256": "6e0ba73a4734cc9addacd07437b920fd6f3986d0234dfbb2913fe28ce16a9b29",
+   "size": 40752
+  },
+  "assets/voice/case02/hisham_fa2e6f57.mp3": {
+   "sha256": "cd0c40aaba4bacb00ddc866d29f872903fb8beae3644213c9a92f5d69b4ae9e9",
+   "size": 26928
+  },
+  "assets/voice/case02/index.json": {
+   "sha256": "9b3f2bfa0ae5320bbe8f4a331bcf9ec6cb6ae4f837dc284e0a16cf165d4f9fb9",
+   "size": 12965
+  },
+  "assets/voice/case02/noha_02c0a880.mp3": {
+   "sha256": "18d91c15acc25b7226a61807addaa78062331dde2c213379ccf644c0bd3ee343",
+   "size": 11232
+  },
+  "assets/voice/case02/noha_142557eb.mp3": {
+   "sha256": "9fc26367800b38707a08badb6133eadddd58c2ffb1537f59419199fbecc248ec",
+   "size": 54720
+  },
+  "assets/voice/case02/noha_18f7a43f.mp3": {
+   "sha256": "b1ae4e0708f2d3658c859c45da3a5584c45de2bfefecb4d6c55ddc2212550f8d",
+   "size": 34992
+  },
+  "assets/voice/case02/noha_2730fbdd.mp3": {
+   "sha256": "0214d3838153e73fa2927e64e1b64e8e6c80a1464cc435ee25cd659dffba2d74",
+   "size": 33696
+  },
+  "assets/voice/case02/noha_2a711134.mp3": {
+   "sha256": "dccf482b17f693e28a67fe14a4d1bb5841ff984e2295d88b7c96228914ba2d56",
+   "size": 69696
+  },
+  "assets/voice/case02/noha_2f7a90ca.mp3": {
+   "sha256": "323184d552a8011b4d1b607878456fbf039d2152dbe15dfbd6e4b4ed7ab2976d",
+   "size": 53568
+  },
+  "assets/voice/case02/noha_3a252035.mp3": {
+   "sha256": "982fd9546bd2e3b5bb60afa50276566635ebc85b474ebe5b0e1dd3157ed42b01",
+   "size": 95328
+  },
+  "assets/voice/case02/noha_3cfd3abb.mp3": {
+   "sha256": "1a38681b9e4a8ff7edfd1952b7133114e84399dedc8d84c06d41878c72d26584",
+   "size": 58176
+  },
+  "assets/voice/case02/noha_42041882.mp3": {
+   "sha256": "16cd1e8632155b5bd63aee2576a8e7bfb2d19032d48b4f48572f6ab9dfaa9489",
+   "size": 52128
+  },
+  "assets/voice/case02/noha_5164edbf.mp3": {
+   "sha256": "7f54da0f66aaf65e6d924e50ea564262f1fe6761f7de9c3a6ae53d17983e3a2a",
+   "size": 16272
+  },
+  "assets/voice/case02/noha_5c817b4c.mp3": {
+   "sha256": "4410334442fc13b5eeb92fd78e2931ebee7ce48e24c3e4abd111e89c594d7214",
+   "size": 56736
+  },
+  "assets/voice/case02/noha_6eaa23db.mp3": {
+   "sha256": "33de0229b60258fd41991aa1372f7bed6fabb261100c4009e6f8c26bfc68eb8d",
+   "size": 53856
+  },
+  "assets/voice/case02/noha_6f60442b.mp3": {
+   "sha256": "cba350d9ff9c7311977eec206dfbdc907dbfea5ef48754f192cc29e301ff02d5",
+   "size": 52128
+  },
+  "assets/voice/case02/noha_8a4816b2.mp3": {
+   "sha256": "2a680aa9fd62596bc22f0a75ceb83fa5f24e1413cb147e8eb1035d9f0d410e3a",
+   "size": 57744
+  },
+  "assets/voice/case02/noha_97fed508.mp3": {
+   "sha256": "c3c56c6b516c9b847a704155c0894bfa5d22df51a91c64d7938bd235386df82a",
+   "size": 61488
+  },
+  "assets/voice/case02/noha_9b4e4879.mp3": {
+   "sha256": "a3d0951b316abb85b3b4e98bfa58aff77564707f45d39792330a8308ae0217d9",
+   "size": 57024
+  },
+  "assets/voice/case02/noha_a8217e37.mp3": {
+   "sha256": "a0473f89168bab3ee5bbbec8766d5e5cfb6af6fe21f8b743204294279dbbaa54",
+   "size": 18576
+  },
+  "assets/voice/case02/noha_ae6855f7.mp3": {
+   "sha256": "9a598aebb95eea0b1d3a367f3b35a097f6a96857b7941d03d32a2af8868ada57",
+   "size": 58032
+  },
+  "assets/voice/case02/noha_c06e0c53.mp3": {
+   "sha256": "0d244b057bd13121ce0006e60cf44b802ce3c03f79d9137b4353103b280da233",
+   "size": 34560
+  },
+  "assets/voice/case02/noha_c91afc1f.mp3": {
+   "sha256": "06d8d8419f0333167c1f6b1515b1cf66c13f44a801ca8de9e5fc113dd4f68fc6",
+   "size": 15264
+  },
+  "assets/voice/case02/noha_df767eca.mp3": {
+   "sha256": "79b87fa40bd7fd945ad3f80d0405df501af41b07347038bf6d1da3b23066fc28",
+   "size": 48096
+  },
+  "assets/voice/case02/noha_e777b270.mp3": {
+   "sha256": "5f913dfac44c26ab0ebb704d49cbb12ea75db786e75de554f16c6c2c165b9b9d",
+   "size": 35856
+  },
+  "assets/voice/case02/noha_e7daefa3.mp3": {
+   "sha256": "31dd4d0ef2947de874a703595e8451b359f471186dc73a5d3d538da53943520d",
+   "size": 86112
+  },
+  "assets/voice/case02/noha_edf3c622.mp3": {
+   "sha256": "f7482383f3614f9fc0decc339c110f5dca294f4f099655a1d516d150d17630a2",
+   "size": 49536
+  },
+  "assets/voice/case02/saber_1b0ca4ec.mp3": {
+   "sha256": "7082535f82cd7aa0b82cfd2d05d11222b5d45b7fb627d56e6a88c98a033e92ed",
+   "size": 55008
+  },
+  "assets/voice/case02/saber_2245fa94.mp3": {
+   "sha256": "38a853c08c10ded3219dcbfdb59ccb555c366005246d719b49e987526f001963",
+   "size": 59472
+  },
+  "assets/voice/case02/saber_2296a3e8.mp3": {
+   "sha256": "9d43f6d288ccac976de915c7c906e03f0adb3cccabe0d1945b5a49c9f1df860e",
+   "size": 52704
+  },
+  "assets/voice/case02/saber_27286748.mp3": {
+   "sha256": "4c8ba75f484bfef4de26168244d90d77e29cf3a8fb7f838e44c4ef5cdbd0fd10",
+   "size": 15264
+  },
+  "assets/voice/case02/saber_2b2f90b1.mp3": {
+   "sha256": "3b282f69cb6f0857ece8aedfaca73eabeae21eda51a64e5a7fa30b9f7bd1ec42",
+   "size": 41760
+  },
+  "assets/voice/case02/saber_36047eb9.mp3": {
+   "sha256": "71996cf1089e2f6e525aba370fd84dc3fb4435a84e4e7ae5cbfc9bab5b653af7",
+   "size": 18432
+  },
+  "assets/voice/case02/saber_3a275d25.mp3": {
+   "sha256": "d9055cc5a7de1a6788c11030536ff207a50d7e7d79f7a6dc52a9484c2306760b",
+   "size": 42192
+  },
+  "assets/voice/case02/saber_47ca6cc7.mp3": {
+   "sha256": "e671f4495a6bae813c4a0bbcd9c72d2ba01e2af8153f1b1fac9fb4e5a6209723",
+   "size": 43776
+  },
+  "assets/voice/case02/saber_5368704b.mp3": {
+   "sha256": "2e96ba661f447af932e0627f6babd43a78b459d8ace2284dea4a0781fab8396a",
+   "size": 14400
+  },
+  "assets/voice/case02/saber_61b94cce.mp3": {
+   "sha256": "bdff210bca0377a1104686793eb5399930f4ef4bae986a36db77b34935a9be71",
+   "size": 34416
+  },
+  "assets/voice/case02/saber_628fad27.mp3": {
+   "sha256": "4fd905161300154f5f252310ade1260bc13f7ef2c885573e9be33e6ad9522e7a",
+   "size": 58464
+  },
+  "assets/voice/case02/saber_727f0200.mp3": {
+   "sha256": "d38d3e059c0917c9309516ca33bc1e6be915fb62257a5a5e323705839c6b3664",
+   "size": 29952
+  },
+  "assets/voice/case02/saber_7a253c4a.mp3": {
+   "sha256": "d8937bf2f582a21b83ba9d4bea957623c1745734df190ad174fd571af86bfa5a",
+   "size": 37152
+  },
+  "assets/voice/case02/saber_82ee879c.mp3": {
+   "sha256": "6d1a9d6e62a7e21fb6d6e527b8e2bb0cdc1ffcd883a6290ea84bacdc2d1026e2",
+   "size": 29088
+  },
+  "assets/voice/case02/saber_87ffad3e.mp3": {
+   "sha256": "ac24a87c185a7c54d6a4630e26ce74d3001fe50504039d7ecef82853cbb7a68e",
+   "size": 34128
+  },
+  "assets/voice/case02/saber_92706f71.mp3": {
+   "sha256": "65abf863c4f7ba53debce075e4d00c7b7d46081aaaa5bd7801ff7e16008bcc77",
+   "size": 57168
+  },
+  "assets/voice/case02/saber_9a432a9f.mp3": {
+   "sha256": "f2630dc15b935973f099bfcd361f9c1d2b8cd116af6b0c47ed9f1e76bb6fda06",
+   "size": 29520
+  },
+  "assets/voice/case02/saber_acb03f7f.mp3": {
+   "sha256": "ac6bec2d303286bf3b6aa12827920bcc8d66d631da69b59ebda9a62a98eeadd6",
+   "size": 68688
+  },
+  "assets/voice/case02/saber_b4b5e1e0.mp3": {
+   "sha256": "f5066b499869d539761618a51ef0ce536d4f38f07b7d3086ffb22a2b11fdb056",
+   "size": 54576
+  },
+  "assets/voice/case02/saber_c5f280bb.mp3": {
+   "sha256": "4910db5d33fe04c90938cbf711a95f6163e63b94c477b1577bf0c75280ddfe39",
+   "size": 48816
+  },
+  "assets/voice/case02/saber_ccfbda06.mp3": {
+   "sha256": "d9fb9dd630a2e8de29efd20080797b5aa7ebd5ef733afc3a966fc63a54cde4e7",
+   "size": 32688
+  },
+  "assets/voice/case02/saber_e8409c42.mp3": {
+   "sha256": "db5c874416bbd3a8d16328af942f5c53239467a12ab4f40761cbb40a2921bd9f",
+   "size": 21600
+  },
+  "assets/voice/case02/saber_e881e8f6.mp3": {
+   "sha256": "ca8878d5b6e15d54f73d8fc0ebb1e068ef080b34da328546398d7c4ec27b3f03",
+   "size": 16272
+  },
+  "assets/voice/case02/saber_edb8beac.mp3": {
+   "sha256": "36a1a33df655a0554bd42c5621ad68ccf72c36d8f884b27cdf664836479d99aa",
+   "size": 12672
+  },
+  "assets/voice/case02/saber_ee377759.mp3": {
+   "sha256": "7659e6f7427d0e8ded389c81ad85305b648b6fac96265ba78326a4ac366b24ea",
+   "size": 54576
+  },
+  "assets/voice/case02/saber_f0a77399.mp3": {
+   "sha256": "5eb4b6c9b478cafe729dddef7ae312d0cdda1a653643c227a36aa8dce113d4fb",
+   "size": 43344
+  },
+  "assets/voice/case02/saber_fc4789c1.mp3": {
+   "sha256": "365c23e38224ae17266fd4cc41e86eb11fdd37c0a32b6c3ba9513300d5e18ce3",
+   "size": 58032
+  },
+  "assets/voice/case02/salim_0b9465ef.mp3": {
+   "sha256": "d58ec12c3e7e6d4616cc370688795274bdbc7a82e59bb34d95bb22781d651027",
+   "size": 47376
+  },
+  "assets/voice/case02/salim_19175f31.mp3": {
+   "sha256": "393530b57f12df878b0f06358b98070c5edf20f5306a509dfc272c3958ca9444",
+   "size": 50544
+  },
+  "assets/voice/case02/salim_1ca76e51.mp3": {
+   "sha256": "38035ebe2be534cfd569a2f2155773a08a8e4a2abbd89911c54f5c0731bc0ca9",
+   "size": 63648
+  },
+  "assets/voice/case02/salim_25cdd21d.mp3": {
+   "sha256": "a0e4845004b50f1dc2000538e5b93952c1e47087c2fb7f57af012c7daa77d0b4",
+   "size": 70272
+  },
+  "assets/voice/case02/salim_2da5cd76.mp3": {
+   "sha256": "e7141c283774c65571646084000a3fa118003d2ea2c7290285a8e40a6b12ef21",
+   "size": 53856
+  },
+  "assets/voice/case02/salim_2f1cf044.mp3": {
+   "sha256": "e6ff50dc1633d07294368351d4ea399acb89f5669294b0a17f18918f6eb444c4",
+   "size": 59616
+  },
+  "assets/voice/case02/salim_399badb1.mp3": {
+   "sha256": "74593dfc8e630c5a13e9971af43de5c3780a4c3682a18cb5cfa88b3591874bce",
+   "size": 48384
+  },
+  "assets/voice/case02/salim_407c229d.mp3": {
+   "sha256": "cfba13c8ac8c56a70a069371048e8b7e656a7595adba7192a35728561b09f070",
+   "size": 42480
+  },
+  "assets/voice/case02/salim_42608ea1.mp3": {
+   "sha256": "296f4b0cb13920edfe08fc158f1a3d75881fcee248f8e4a2c2fc32fc687a86d3",
+   "size": 15264
+  },
+  "assets/voice/case02/salim_43e96583.mp3": {
+   "sha256": "2fc3ca4bae838378000487d1e5c96d6545c836b920e3ef7be4aa56a13a397d53",
+   "size": 55872
+  },
+  "assets/voice/case02/salim_46008ec0.mp3": {
+   "sha256": "6ce5b684f4f6329d9f7390a869c874aa6c45c287cbdf34c70e4d249aadfee7c3",
+   "size": 99936
+  },
+  "assets/voice/case02/salim_4fd78cf2.mp3": {
+   "sha256": "0da1cb3744856f731f3cc9bfc28b3b716b2e4b35e0746cf7f01def287970845b",
+   "size": 49104
+  },
+  "assets/voice/case02/salim_5184df94.mp3": {
+   "sha256": "81bb9ff188f508c1a2b20bf5e1925e625637226b6c62e591e60adc853786df3f",
+   "size": 41616
+  },
+  "assets/voice/case02/salim_586cbc2e.mp3": {
+   "sha256": "465735a59b3c071dab74af33c859ea8ce7f7900eccedb2f8edabce9267a3d3b4",
+   "size": 42192
+  },
+  "assets/voice/case02/salim_5f16e827.mp3": {
+   "sha256": "d3251938c40767244da8a98c1ad49e62b9ecce4d4d3d4a3ac0c414d997e44c3c",
+   "size": 36000
+  },
+  "assets/voice/case02/salim_605afeb4.mp3": {
+   "sha256": "4f8f3240d47a046b40816ede1a315f90633db33c706365b8419c1cdb7f10683a",
+   "size": 35424
+  },
+  "assets/voice/case02/salim_6060ad59.mp3": {
+   "sha256": "ac2178f0bfb4ae3195c14fb0dc6343b7aa7e5573275e196e85ce58fc6141374b",
+   "size": 27072
+  },
+  "assets/voice/case02/salim_60d0755e.mp3": {
+   "sha256": "5e1c939b09eaa796da4cf5d999fdb68bea939ced50947fcf190c3893af9c4e51",
+   "size": 45072
+  },
+  "assets/voice/case02/salim_644e1c9e.mp3": {
+   "sha256": "9e60fa4d3c9d105c001abead00939964ea4d33c6d19244750080255293b02cff",
+   "size": 33264
+  },
+  "assets/voice/case02/salim_6a5601e6.mp3": {
+   "sha256": "3b458a6dc9be472930e853e2f73018501972bbee880a4c7a73d098d5cbe125cc",
+   "size": 48816
+  },
+  "assets/voice/case02/salim_738f252c.mp3": {
+   "sha256": "5ce449c37138108a01eed5371ddc4723e66d0a215e9612baa5c586c48b431a90",
+   "size": 23616
+  },
+  "assets/voice/case02/salim_7e0b667a.mp3": {
+   "sha256": "f35be9c8f3d5d22e1a2a6aa860263eeadb77c39808cacd44f22ec6dc4312dc77",
+   "size": 58752
+  },
+  "assets/voice/case02/salim_8dfe0ce5.mp3": {
+   "sha256": "2315cc194b16eb7747a3478bb2681bd2e1299a9d3eac1d65f767e688436f069b",
+   "size": 33984
+  },
+  "assets/voice/case02/salim_9487928e.mp3": {
+   "sha256": "5b80e114eef52f15b9265daf32fd97942e4bdd92aa997e061efb881eedbf7036",
+   "size": 37152
+  },
+  "assets/voice/case02/salim_97f3aeef.mp3": {
+   "sha256": "90bb2742db9dd8fece818037706bf4f5d323c1e47060c4af5da8bcae1624a04f",
+   "size": 70416
+  },
+  "assets/voice/case02/salim_a0a30962.mp3": {
+   "sha256": "ba730f9be74b0cbc6ed76ecc16c38a446f8f1da3b55c4237900882917016bb3a",
+   "size": 47952
+  },
+  "assets/voice/case02/salim_a1d53eaa.mp3": {
+   "sha256": "f434b64806377d0425a769be3f71ad6db9f645b7a26a595d8ec59eabf73e89de",
+   "size": 35856
+  },
+  "assets/voice/case02/salim_ab73c89c.mp3": {
+   "sha256": "901ecbe9ce0f4d8c78bf2e27347022700494197f94aee770d54baae29f76a510",
+   "size": 53136
+  },
+  "assets/voice/case02/salim_ade7db03.mp3": {
+   "sha256": "9aed6dc476f80b1e40a9b488d7950cad7c5e658c55589478896ec1232979cb86",
+   "size": 56160
+  },
+  "assets/voice/case02/salim_b1af81e8.mp3": {
+   "sha256": "c08da2becdb9ed8fb9df418468086227eeabe549fc49a58383870b4d370e865b",
+   "size": 44496
+  },
+  "assets/voice/case02/salim_b4f39228.mp3": {
+   "sha256": "334d429a97c0b6aeeceb8e5456a70b50c99e1ecb40fa35b432f48d8b21e7cdb9",
+   "size": 31824
+  },
+  "assets/voice/case02/salim_bb17d322.mp3": {
+   "sha256": "2b0e7bfed99e27c88ba48fb018d37bb51f940ae9ba8ecdebcc4b0feaefb079c9",
+   "size": 32976
+  },
+  "assets/voice/case02/salim_c3bee544.mp3": {
+   "sha256": "a5dc6280445ee8451258d96606c069584df68301acc32e80c382323c22f9b4f1",
+   "size": 35136
+  },
+  "assets/voice/case02/salim_c59d61f2.mp3": {
+   "sha256": "152fc2baf9cca16431cbc7dad6c3a2525a1522d7a47bdbec8808bcd3e095e76a",
+   "size": 53712
+  },
+  "assets/voice/case02/salim_c6cb6b1c.mp3": {
+   "sha256": "70386050f33e6083f08e7db9fce2b72d367780d24ae16dbbf1699dd11468f3e8",
+   "size": 46656
+  },
+  "assets/voice/case02/salim_c830d110.mp3": {
+   "sha256": "6a1a75fae5ca1785543fd1a8be148cebf66e27fe2ad96621aaa59c364057fe8f",
+   "size": 53424
+  },
+  "assets/voice/case02/salim_c9ac8ad5.mp3": {
+   "sha256": "1f8465815c0d1a4e45cd91cc65cd072fc92a6c9eca99b348c32a11b6719af1f1",
+   "size": 38736
+  },
+  "assets/voice/case02/salim_cc58dcf2.mp3": {
+   "sha256": "9409836b538a677833271ea9baf82c98115da282c68f8765484e1f992d5e8789",
+   "size": 40752
+  },
+  "assets/voice/case02/salim_d4dc697f.mp3": {
+   "sha256": "27326597185fe9ca5d931dda21be041e41635c9a5df30ea4ffcdd3b1b32be5d8",
+   "size": 39312
+  },
+  "assets/voice/case02/salim_dab951e4.mp3": {
+   "sha256": "9a08799773f4c20622f33ea5a15fa4201b18ebe766b7eb93b3b5dc44a61d9dc2",
+   "size": 40464
+  },
+  "assets/voice/case02/salim_dc9f746f.mp3": {
+   "sha256": "afa7ce276f8326aa378a53200d385b51163d489e8a8535fcddf05c949407ceac",
+   "size": 68256
+  },
+  "assets/voice/case02/salim_dcf645a5.mp3": {
+   "sha256": "eee3ae1c7cfe23ccc50e7e7a3f1ae664720f3c34755ea7f1807fd13db683bdc0",
+   "size": 59328
+  },
+  "assets/voice/case02/salim_f6ed774b.mp3": {
+   "sha256": "200d1d9835c48bf5a10cebcc86266111be7ef8260fbc15e0b8654a37160c407a",
+   "size": 79632
+  },
+  "assets/voice/case02/salim_fc65bb54.mp3": {
+   "sha256": "55d321a9e3cca7a9672f3e11392e830cd8cde7569577d32655af3ccb58c2bd5f",
+   "size": 28656
+  },
+  "assets/voice/case02/tarek_02c0a880.mp3": {
+   "sha256": "6c190ef7d4bbef0923bc1626df134c35046f30c1348ac6caf440e670b35c52c4",
+   "size": 11232
+  },
+  "assets/voice/case02/tarek_036a3227.mp3": {
+   "sha256": "8ba078f75806db217e56118ae360c55e36a107c40ee3a2ea144dae9d41e44581",
+   "size": 46656
+  },
+  "assets/voice/case02/tarek_13d15f0d.mp3": {
+   "sha256": "86387bb08f32e038630a53da9305f4fdc785b2631ccfe89e5d94cc263cf4475a",
+   "size": 34704
+  },
+  "assets/voice/case02/tarek_1e1ad11c.mp3": {
+   "sha256": "5bc6a21da2f96aa1027d1cae0313b723f52005ff32cde01989d95714ff32d74e",
+   "size": 31104
+  },
+  "assets/voice/case02/tarek_231b30bb.mp3": {
+   "sha256": "a8794373ab2a8f580e20d8cff9830c7c2ddbd19afdf3b5e32e83c7d5606951fb",
+   "size": 84384
+  },
+  "assets/voice/case02/tarek_2ffa396b.mp3": {
+   "sha256": "63fd629e55d9b1f1194e6eab88d39023913f4c5867f5c80cf078ada3b3c77210",
+   "size": 55008
+  },
+  "assets/voice/case02/tarek_39986b4b.mp3": {
+   "sha256": "9df503b00ecc36c1920201aa94b144a7db748d5dc9363ee27f716bf06165d060",
+   "size": 47520
+  },
+  "assets/voice/case02/tarek_3d56527c.mp3": {
+   "sha256": "8e0c3c5dab81ddb499a84145154816e067d585b20635535e3c8c45ce7fc1cbb0",
+   "size": 53568
+  },
+  "assets/voice/case02/tarek_50acb839.mp3": {
+   "sha256": "9395f5648231c27f4458ddf84933706d401382a5eb4cd1b744f48a3f05813f00",
+   "size": 49968
+  },
+  "assets/voice/case02/tarek_5e41bcf6.mp3": {
+   "sha256": "3d43d7e7db502b231ffc3d42d82845859cc370db95dceaa77b3e8aadb4e7d118",
+   "size": 53280
+  },
+  "assets/voice/case02/tarek_5ffea78d.mp3": {
+   "sha256": "3b1b9356f431e1d3f673195c89b2f3c0cdb8cec1991f233713131982098af3ab",
+   "size": 41904
+  },
+  "assets/voice/case02/tarek_647d4425.mp3": {
+   "sha256": "52be9989b215952b18cceebea3437dee438854c0e32ad6db9a2418ce32949cc5",
+   "size": 35568
+  },
+  "assets/voice/case02/tarek_6845306b.mp3": {
+   "sha256": "f09cadfaac0d945264e214855ed886e71ca6f7eb90447c72382c9d7786519f1a",
+   "size": 46224
+  },
+  "assets/voice/case02/tarek_6d3115e2.mp3": {
+   "sha256": "d471c917407f9908f5aa095b26fe769be2986318aed75db06ea9a2c56ed0cb0f",
+   "size": 64368
+  },
+  "assets/voice/case02/tarek_778f66c0.mp3": {
+   "sha256": "12c9c7e8ed35512cd7ab37380005162533ea03f8a16b94c367eaf213183af023",
+   "size": 60336
+  },
+  "assets/voice/case02/tarek_8e4b938b.mp3": {
+   "sha256": "6d8d4684082a4de7ebc2d248f795d7a5babcf91bbbc358f75364861a6bb65585",
+   "size": 18432
+  },
+  "assets/voice/case02/tarek_985ea008.mp3": {
+   "sha256": "43be403964f16bedd2ee49ab29dcbb637519b9948c47871d2823ed213a36df1e",
+   "size": 37872
+  },
+  "assets/voice/case02/tarek_adad816d.mp3": {
+   "sha256": "f52b892789e2a38c3acd7570f9579d5121d3f21846b58e9187024a73785333f9",
+   "size": 75168
+  },
+  "assets/voice/case02/tarek_aeba6fd7.mp3": {
+   "sha256": "23f18c8b82e0135a48eeea50a0fe3c6c7ec9bf8015724a61efcc4edfa6a66a05",
+   "size": 62640
+  },
+  "assets/voice/case02/tarek_be69becc.mp3": {
+   "sha256": "4b8d00e6b7fb033b76de9b9007caa530000a91a9d36082aa8c8de3c2668ae353",
+   "size": 42336
+  },
+  "assets/voice/case02/tarek_c692da6f.mp3": {
+   "sha256": "2896ac11da6b32a59bafbf5dcc4b052e8bbd5699f93b31c391984815f07aa41a",
+   "size": 63648
+  },
+  "assets/voice/case02/tarek_d1e23294.mp3": {
+   "sha256": "9572e06fbed23aa2730729b4317903bc9a79479d483a58293078dba316d2a7a2",
+   "size": 57168
+  },
+  "assets/voice/case02/tarek_d3e8669b.mp3": {
+   "sha256": "577f7becc4e2ecd7776cfebf36187d7e400c76edcb0aac7f65241d49230f8f77",
+   "size": 32400
+  },
+  "assets/voice/case02/tarek_ea09db0a.mp3": {
+   "sha256": "6c51e68cfc06782aaa8bd3a9d85b5681db8984cfcc512cb8f35800f94aa75cd9",
+   "size": 54720
+  },
+  "assets/voice/case02/tarek_ecce7fee.mp3": {
+   "sha256": "f1ea97c3888d471e58a70dfb9bbea0bd858dde2e30eb3078d61d5caceeebdda1",
+   "size": 36576
+  },
+  "assets/voice/case02/tarek_f6b127c9.mp3": {
+   "sha256": "faf96f58c4b3169c751c43a024064250be6b09cf38dbe13b49fd9dc73603dca1",
+   "size": 12240
   },
   "node_modules/three/package.json": {
    "sha256": "2caf5d31ca4368c7e39e7e598dd95774fe1bdaae7cfbc5b073c8dcb5ec7e25da",
