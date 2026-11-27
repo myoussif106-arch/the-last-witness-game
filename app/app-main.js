@@ -46,7 +46,7 @@ function createWindow() {
     win.webContents.session.webRequest.onErrorOccurred(d => console.log('[NET] ' + d.error + ' ' + d.url.slice(0, 160)));
   }
   if (process.env.LW_EVAL) {
-    win.webContents.on('did-finish-load', () => setTimeout(() => win.webContents.executeJavaScript(process.env.LW_EVAL).then(r => console.log('[EVAL]', JSON.stringify(r))).catch(e => console.log('[EVAL-ERR]', e.message)), Number(process.env.LW_EVAL_DELAY || 20000)));
+    win.webContents.on('did-finish-load', () => setTimeout(() => win.webContents.executeJavaScript(process.env.LW_EVAL).then(r => console.log('[EVAL]', JSON.stringify(r))).catch(e => console.log('[EVAL-ERR]', e.message)).finally(() => { if (process.env.LW_QUIT) app.quit(); }), Number(process.env.LW_EVAL_DELAY || 20000)));
   }
   // automated screenshot for testing: LW_SHOT=path.png LW_SHOT_DELAY=ms
   if (process.env.LW_SHOT) {
@@ -112,7 +112,7 @@ app.whenReady().then(() => {
   ipcMain.handle('test:shot', async (_e, name) => {
     if (!process.env.LW_SHOT_DIR) return false;
     const img = await win.webContents.capturePage();
-    fs.writeFileSync(path.join(process.env.LW_SHOT_DIR, name + '.png'), img.resize({ width: 1280 }).toPNG());
+    fs.writeFileSync(path.join(process.env.LW_SHOT_DIR, name + '.png'), img.resize({ width: Number(process.env.LW_SHOT_WIDTH) || 1280 }).toPNG());
     return true;
   });
 

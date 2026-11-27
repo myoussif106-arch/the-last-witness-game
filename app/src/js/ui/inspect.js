@@ -216,7 +216,7 @@ export class InspectUI {
     const check = () => {
       const d = mctx.getImageData(40, 80, W - 80, 520).data; let on = 0, n = 0;
       for (let i = 3; i < d.length; i += 4 * 97) { n++; if (d[i] > 100) on++; }
-      if (on / n > 0.55) { revealed = true; hint.textContent = 'ظهرت الكتابة!'; this.reveal('rubbed'); this.inv.g.log('ظلّلت ورقة المذكرة فظهرت كتابة الأستاذ حسن عن خاتم ليلى.'); }
+      if (on / n > 0.55) { revealed = true; hint.textContent = 'ظهرت الكتابة!'; this.reveal('rubbed'); this.inv.g.log(ev.rubLog || 'ظلّلت ورقة المذكرة فظهرت كتابة الأستاذ حسن عن خاتم ليلى.'); }
     };
     this.thumb = null;
   }

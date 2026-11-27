@@ -67,9 +67,12 @@ function fixMaterial(name, id, patches = {}) {
   const sem = name.replace(/^[a-z]*\d+_/i, '');
   const base = `characters/${id}/${sem}`;
   const m = new THREE.MeshStandardMaterial({ name, roughness: 0.62, metalness: 0, envMapIntensity: 0.7 });
-  const isOpacity = /opacity/.test(sem);
+  // glasses use one "<name>_opacity_color" map (frame colour + lens cut-out) without a separate _color map
+  const isGlasses = sem === 'glasses';
+  const colorBase = isGlasses ? base + '_opacity' : base;
+  const isOpacity = /opacity/.test(sem) || isGlasses;
   const isSkin = sem === 'head';
-  (patches[sem] ? patchedTexture(assetURL(base + '_color.jpg'), patches[sem]) : Assets.texture(base + '_color.jpg'))
+  (patches[sem] ? patchedTexture(assetURL(colorBase + '_color.jpg'), patches[sem]) : Assets.texture(colorBase + '_color.jpg'))
     .then(t => { m.map = t; m.needsUpdate = true; }).catch(() => {});
   if (!isOpacity) Assets.texture(base + '_normal.jpg', { srgb: false }).then(t => { m.normalMap = t; m.normalScale.set(isSkin ? 0.7 : 1, isSkin ? 0.7 : 1); m.needsUpdate = true; }).catch(() => {});
   if (!isOpacity) Assets.texture(base + '_specular.jpg', { srgb: false }).then(t => {
@@ -86,7 +89,7 @@ function fixMaterial(name, id, patches = {}) {
   };
   if (isOpacity) {
     m.alphaTest = 0.45; m.side = THREE.DoubleSide; m.roughness = 0.7;
-    Assets.texture(base + '_color_alpha.jpg', { srgb: false }).then(t => { m.alphaMap = t; m.needsUpdate = true; }).catch(() => {});
+    Assets.texture(colorBase + '_color_alpha.jpg', { srgb: false }).then(t => { m.alphaMap = t; m.needsUpdate = true; }).catch(() => {});
   }
   return m;
 }

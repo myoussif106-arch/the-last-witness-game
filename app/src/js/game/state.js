@@ -31,8 +31,9 @@ export class GameState {
       this.data = d;
       this.data.settings = { ...DEFAULT_SETTINGS, ...(d.settings || {}) };
     }
-    for (const [i, c] of CASES.entries()) {
-      if (!this.data.cases[c.id]) this.data.cases[c.id] = { unlocked: i === 0, solved: false, bestScore: 0, bestRating: null, attempts: 0, state: null };
+    for (const c of CASES) {
+      if (!this.data.cases[c.id]) this.data.cases[c.id] = { unlocked: true, solved: false, bestScore: 0, bestRating: null, attempts: 0, state: null };
+      this.data.cases[c.id].unlocked = true; // owner's decision (2026-11-27): every case is open from the start, also in old saves
     }
     return this.data;
   }
@@ -98,7 +99,7 @@ export class GameState {
   resetAll() {
     const settings = this.data.settings;
     this.data = { version: 1, settings, cases: {}, current: null, lastPlayed: null };
-    for (const [i, c] of CASES.entries()) this.data.cases[c.id] = { unlocked: i === 0, solved: false, bestScore: 0, bestRating: null, attempts: 0, state: null };
+    for (const c of CASES) this.data.cases[c.id] = { unlocked: true, solved: false, bestScore: 0, bestRating: null, attempts: 0, state: null };
     return this.saveNow();
   }
 }
