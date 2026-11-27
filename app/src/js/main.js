@@ -6,6 +6,7 @@ import { CASES, loadCase } from './cases/index.js';
 import { renderMainMenu, renderSettings, renderPause } from './ui/menus.js';
 import { $, show, wait, esc } from './ui/dom.js';
 import { isTouch } from './core/platform.js';
+import { Telemetry } from './core/telemetry.js';
 import { TouchControls } from './ui/touch.js';
 
 class App {
@@ -24,6 +25,8 @@ class App {
     await Promise.all([document.fonts.load('20px Amiri'), document.fonts.load('20px "Aref Ruqaa"'), document.fonts.load('bold 20px Amiri')]).catch(() => {});
     await this.game.load();
     this.applySettings();
+    this.version = await gameVersion();
+    Telemetry.init(this.game, this.version).then(() => Telemetry.track('launch'));
     this.toMenu(true);
     requestAnimationFrame(t => this.loop(t));
     // first user gesture unlocks audio
@@ -77,6 +80,7 @@ class App {
     const bar = L.querySelector('.load-bar div'); bar.style.width = '0%';
     show(L, true);
     const isNew = fresh || !this.game.caseProgress(id).state;
+    Telemetry.track('case_start', id, { fresh: !!isNew });
     this.game.startCase(id, fresh);
     const inv = new Investigation(this, mod, meta);
     show($('#stage'), true);
@@ -127,6 +131,12 @@ class App {
     }
     requestAnimationFrame(tt => this.loop(tt));
   }
+}
+
+async function gameVersion() {
+  try { if (window.native && window.native.updateInfo) return (await window.native.updateInfo()).version; } catch {}
+  for (const u of ['../version.json', '../package.json']) { try { const v = (await fetch(u).then(r => r.json())).version; if (v) return v; } catch {} }
+  return '?';
 }
 
 const app = new App();

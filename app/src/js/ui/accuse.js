@@ -1,5 +1,6 @@
 import { $, h, esc, show, KIND_LABEL, stars, wait } from './dom.js';
 import { audio } from '../core/audio.js';
+import { Telemetry } from '../core/telemetry.js';
 
 export function scoreAccusation(data, answers, chosen) {
   const A = data.accusation;
@@ -90,6 +91,7 @@ export class AccuseUI {
     const record = { t: Date.now(), answers: { ...this.answers }, evidence: [...this.chosen], score: r.total, rating: r.rating, label: r.label, passed: r.passed, story,
       summary: { score: r.total, rating: r.rating, label: r.label, story, truth: inv.data.accusation.truth } };
     inv.g.recordAccusation(record);
+    Telemetry.track('accusation', inv.caseMeta.id, { score: r.total, passed: r.passed, rating: r.rating, suspect_ok: r.suspectOk, attempt: inv.g.cs.accusations.length });
     inv.refreshObjectives();
     await this.showResult(r, story);
   }

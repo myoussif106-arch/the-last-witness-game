@@ -3,6 +3,7 @@ import { audio } from '../core/audio.js';
 import { CASES } from '../cases/index.js';
 import { QUALITY_LABELS, DEFAULT_SETTINGS } from '../core/settings.js';
 import { isNativeMobile } from '../core/platform.js';
+import { Telemetry } from '../core/telemetry.js';
 
 export function renderMainMenu(app) {
   const g = app.game;

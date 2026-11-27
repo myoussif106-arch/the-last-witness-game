@@ -1,7 +1,7 @@
 {
- "version": "0.4.0",
- "date": "2026-11-27T00:02:47.549Z",
- "notes": "نسخة أندرويد! يمكنك الآن لعب «الشاهد الأخير» على الموبايل بتحكم باللمس، مع نفس القضايا والشخصيات والأصوات.",
+ "version": "0.4.1",
+ "date": "2026-11-27T00:32:12.747Z",
+ "notes": "تحسينات داخلية في الأداء والاستقرار.",
  "files": {
   "main.js": {
    "sha256": "e64bc380a60814353adf8489ccf87c6054aa00acd05e306ec96a083c4f624f9b",
@@ -20,7 +20,7 @@
    "size": 957
   },
   "package.json": {
-   "sha256": "52c23ebb762041ede33178240f15dd404ae9b8318ef10d75cb5bef693f58492c",
+   "sha256": "5d3142f22604b3fc0cec3d2438fabf230d7f0fd3c63dcb1f9357d729811fa3fe",
    "size": 1014
   },
   "THIRD_PARTY_LICENSES.txt": {
@@ -87,6 +87,14 @@
    "sha256": "0b9ee57b6f389215a29b274b962725d5ba98fe6cb17f0728258e76c05108f2d3",
    "size": 733
   },
+  "src/js/core/telemetry-config.js": {
+   "sha256": "f068544fa13384eccd218a4f093d897b49e48ec0a5b0da169ff3a9641810555d",
+   "size": 302
+  },
+  "src/js/core/telemetry.js": {
+   "sha256": "a2959379e1099a5c5b824e9840a2b766e45286b49662eedeb660cf54b6476e60",
+   "size": 2682
+  },
   "src/js/core/voicekey.js": {
    "sha256": "263aeb6143fb0d7682aa4eb7376072b35c31a6d433d4bd71711b8145fad1fed0",
    "size": 434
@@ -124,12 +132,12 @@
    "size": 4606
   },
   "src/js/main.js": {
-   "sha256": "c0e877fb1b8fd66ad79d136cd616867eb2861884340052b06c105bcadd79e4b3",
-   "size": 6260
+   "sha256": "c364d3a1cae4125e786e37aa84e147d8df93066de1f6cbb919ca23e205a1e522",
+   "size": 6808
   },
   "src/js/ui/accuse.js": {
-   "sha256": "37ce7a566950772d6018478c06f648e9c5ea25ebf41368987008e177defeea3f",
-   "size": 9624
+   "sha256": "db710934424553565805799761fd4d719e0ce45fcc20db4a6eabc4a8a44098b3",
+   "size": 9845
   },
   "src/js/ui/board.js": {
    "sha256": "6bc7a96f6aaa77358182d8d30defd863c4988cb49d7da5d1d8d7e5d889c568f5",
@@ -156,8 +164,8 @@
    "size": 13738
   },
   "src/js/ui/menus.js": {
-   "sha256": "e0393fd6a391eadd48766ecd7782931c9fe48d4b05215978fcfdc5e8d68c23cb",
-   "size": 20315
+   "sha256": "69b48cf8fa2ee07ccbc74baa5752207a81770afd093254198f3b7900aafe16db",
+   "size": 20365
   },
   "src/js/ui/picker.js": {
    "sha256": "b9ebc3a1686ac1f962aab7ef71ef57f1a85768c5c15568d05fff8dc17c10a431",
