@@ -4,7 +4,9 @@
 
 ## ⬇️ تحميل اللعبة
 
-**[اضغط هنا لتحميل اللعبة (TheLastWitness.zip)](https://github.com/myoussif106-arch/the-last-witness-game/releases/latest/download/TheLastWitness.zip)**
+**[🖥️ تحميل نسخة الكمبيوتر (TheLastWitness.zip)](https://github.com/myoussif106-arch/the-last-witness-game/releases/latest/download/TheLastWitness.zip)**
+
+**[📱 تحميل نسخة أندرويد (TheLastWitness.apk)](https://github.com/myoussif106-arch/the-last-witness-game/releases/latest/download/TheLastWitness.apk)**
 
 أو افتح [صفحة الإصدارات](https://github.com/myoussif106-arch/the-last-witness-game/releases/latest).
 
@@ -14,4 +16,4 @@
 
 > لا تستخدم زر **Code ← Download ZIP**: فهو يحمّل ملفات التحديث الخام وليس اللعبة الجاهزة للتشغيل.
 
-الإصدار الحالي: 0.3.0
+الإصدار الحالي: 0.4.0

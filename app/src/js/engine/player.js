@@ -43,9 +43,18 @@ export class Player {
     if (k.KeyS || k.ArrowDown) fz -= 1;
     if (k.KeyA || k.ArrowLeft) fx -= 1;
     if (k.KeyD || k.ArrowRight) fx += 1;
+    // on-screen joystick + drag-to-look (phones)
+    let stickMag = 0;
+    if (this.touch) {
+      const m = this.touch.move; stickMag = Math.min(1, Math.hypot(m.x, m.y));
+      if (stickMag > 0.12) { fx += m.x; fz += m.y; }
+      const d = this.touch.takeLook(), s = 0.0045 * this.sensitivity;
+      this.yaw -= d.x * s; this.pitch -= d.y * s * (this.invertY ? -1 : 1);
+      this.pitch = Math.max(-1.45, Math.min(1.45, this.pitch));
+    }
     const crouching = !!k.KeyC;
     this.crouch += ((crouching ? 1 : 0) - this.crouch) * Math.min(1, dt * 10);
-    const run = (k.ShiftLeft || k.ShiftRight) && !crouching;
+    const run = ((k.ShiftLeft || k.ShiftRight) || stickMag > 0.97) && !crouching;
     const speed = crouching ? 1.1 : run ? 3.4 : 1.9;
     const len = Math.hypot(fx, fz);
     const target = new THREE.Vector2();

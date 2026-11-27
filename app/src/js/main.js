@@ -5,12 +5,15 @@ import { Investigation } from './game/investigation.js';
 import { CASES, loadCase } from './cases/index.js';
 import { renderMainMenu, renderSettings, renderPause } from './ui/menus.js';
 import { $, show, wait, esc } from './ui/dom.js';
+import { isTouch } from './core/platform.js';
+import { TouchControls } from './ui/touch.js';
 
 class App {
   constructor() {
     this.game = game;
     this.params = new URLSearchParams(location.search);
-    this.debugNoLock = this.params.has('nolock');
+    this.debugNoLock = this.params.has('nolock') || isTouch; // phones have no mouse to lock
+    this.touch = isTouch ? new TouchControls(this) : null;
     this.renderer = new Renderer($('#stage'));
     this.inv = null;
     this.last = performance.now();

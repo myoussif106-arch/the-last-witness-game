@@ -2,6 +2,7 @@ import { $, h, esc, show, stars } from './dom.js';
 import { audio } from '../core/audio.js';
 import { CASES } from '../cases/index.js';
 import { QUALITY_LABELS, DEFAULT_SETTINGS } from '../core/settings.js';
+import { isNativeMobile } from '../core/platform.js';
 
 export function renderMainMenu(app) {
   const g = app.game;
@@ -48,6 +49,26 @@ export function renderMainMenu(app) {
     const v = el.querySelector('#ver'); if (v) v.textContent = 'الإصدار ' + info.version;
     if (info.enabled && !updateChecked) { updateChecked = true; checkForUpdates(false); }
   });
+  if (isNativeMobile) mobileVersion().then(v => {
+    const el2 = el.querySelector('#ver'); if (el2 && v) el2.textContent = 'الإصدار ' + v.version;
+    if (v && !updateChecked) { updateChecked = true; checkForUpdates(false); }
+  });
+}
+
+// ---- Android app: the game files live inside the APK, so a new version means installing the new APK.
+async function mobileVersion() { try { return await fetch('../version.json').then(r => r.json()); } catch { return null; } }
+async function checkMobileUpdate(manual) {
+  const v = await mobileVersion(); if (!v || !v.updateRepo) return;
+  const cmp = (a, b) => { const x = a.split('.').map(Number), y = b.split('.').map(Number); for (let i = 0; i < 3; i++) if ((x[i] || 0) !== (y[i] || 0)) return (x[i] || 0) - (y[i] || 0); return 0; };
+  let remote = null;
+  try { remote = await fetch(`https://raw.githubusercontent.com/${v.updateRepo}/main/manifest.json?t=${Date.now()}`, { cache: 'no-store' }).then(r => r.json()); } catch {}
+  if (!remote) { if (manual) modal('<p style="font-size:18px;line-height:1.9;margin:0">تعذّر الاتصال بخادم التحديثات. تأكد من اتصالك بالإنترنت وحاول لاحقًا.</p>', [['حسنًا', 'primary', () => {}]], 520); return; }
+  if (cmp(remote.version, v.version) <= 0) { if (manual) modal(`<p style="font-size:18px;line-height:1.9;margin:0">لديك أحدث إصدار من اللعبة (${esc(v.version)}).</p>`, [['حسنًا', 'primary', () => {}]], 480); return; }
+  modal(`<h3 style="font-family:var(--ui);font-weight:800;font-size:26px;margin:0 0 6px">يتوفر إصدار جديد</h3>
+    <p style="color:var(--gold);margin:0 0 10px">الإصدار ${esc(remote.version)}</p>
+    ${remote.notes ? `<p style="font-size:16.5px;line-height:1.9;white-space:pre-wrap;color:var(--ink-dim)">${esc(remote.notes)}</p>` : ''}
+    <p style="font-size:15px;color:var(--ink-dim)">سيُفتح رابط تحميل ملف التثبيت. ثبّته فوق النسخة الحالية، وتقدمك المحفوظ لن يتأثر.</p>`,
+    [['تحميل التحديث', 'primary', () => { location.href = `https://github.com/${v.updateRepo}/releases/latest/download/TheLastWitness.apk`; }], ['لاحقًا', '', () => {}]], 620);
 }
 
 function renderCaseList(app, panel) {
@@ -109,6 +130,7 @@ export function confirmModal(text) {
 // ---------------------------------------------------------------- updates
 let updateChecked = false;
 export async function checkForUpdates(manual) {
+  if (isNativeMobile) return checkMobileUpdate(manual);
   if (!window.native || !window.native.checkUpdate) return;
   const wait = manual ? modal('<p style="font-size:18px;margin:0">جارٍ البحث عن تحديثات…</p>', [], 480) : null;
   const r = await window.native.checkUpdate();
@@ -141,7 +163,7 @@ function showCredits() {
   اربط الخيوط على لوحة التحقيق، اكشف الأكاذيب والتناقضات، ثم قدّم اتهامك: من الفاعل؟ وكيف؟ ولماذا؟</p>
   <p style="line-height:1.95;font-size:16px">كل قضية قصة مستقلة بأماكنها وشخصياتها وأسرارها، وتزداد الصعوبة من قضية إلى أخرى،
   حتى تصل إلى القضية الأخيرة حيث تلتقي كل الخيوط عند شاهد واحد.</p>
-  <p style="color:var(--ink-dim);font-size:14px">التحكم: الفأرة للنظر • W A S D للحركة • Shift للإسراع • C للانحناء • E للتفاعل • Tab ملف القضية • B لوحة التحقيق • F حاسة المحقق • Esc إيقاف مؤقت</p>`, [['إغلاق', 'primary', () => {}], ...(window.native && window.native.checkUpdate ? [['البحث عن تحديثات', '', () => checkForUpdates(true)]] : [])], 720);
+  <p style="color:var(--ink-dim);font-size:14px">التحكم: الفأرة للنظر • W A S D للحركة • Shift للإسراع • C للانحناء • E للتفاعل • Tab ملف القضية • B لوحة التحقيق • F حاسة المحقق • Esc إيقاف مؤقت</p>`, [['إغلاق', 'primary', () => {}], ...((window.native && window.native.checkUpdate) || isNativeMobile ? [['البحث عن تحديثات', '', () => checkForUpdates(true)]] : [])], 720);
 }
 
 let rainRAF = 0;

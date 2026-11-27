@@ -25,6 +25,8 @@ export class GameState {
 
   async load() {
     const d = await Storage.load();
+    // phones start on a lighter graphics preset (can be raised in the settings)
+    if (!d && document.documentElement.classList.contains('touch')) this.data.settings.quality = 'medium';
     if (d && d.version === 1) {
       this.data = d;
       this.data.settings = { ...DEFAULT_SETTINGS, ...(d.settings || {}) };

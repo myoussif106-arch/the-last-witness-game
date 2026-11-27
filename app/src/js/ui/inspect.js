@@ -63,11 +63,18 @@ export class InspectUI {
 
     // ---- view modes
     this.thumb = null;
+    this.zoomFn = null;
     if (ev.view === 'doc') this._doc(view, ev);
     else if (ev.view === 'rub') this._rub(view, ev);
     else if (ev.view === 'image' && image) this._image(view, image);
     else if (model) this._3d(view, model);
     else this._image(view, null);
+    if (document.documentElement.classList.contains('touch') && this.zoomFn) {
+      const zb = h('<div class="zoombtns"><button class="btn">+</button><button class="btn">−</button></div>');
+      const [zin, zout] = zb.querySelectorAll('button');
+      zin.onclick = () => this.zoomFn(1.2); zout.onclick = () => this.zoomFn(1 / 1.2);
+      view.appendChild(zb);
+    }
     return closed;
   }
 
@@ -103,7 +110,7 @@ export class InspectUI {
     const r = this.renderer;
     r.domElement.className = 'i3d';
     view.appendChild(r.domElement);
-    view.appendChild(h('<div class="vhint">اسحب بالفأرة لتدوير الدليل • عجلة الفأرة للتكبير</div>'));
+    view.appendChild(h('<div class="vhint">' + (document.documentElement.classList.contains('touch') ? 'اسحب بإصبعك لتدوير الدليل • زرّا + و − للتكبير' : 'اسحب بالفأرة لتدوير الدليل • عجلة الفأرة للتكبير') + '</div>'));
     while (this.pivot.children.length) this.pivot.remove(this.pivot.children[0]);
     obj.position.set(0, 0, 0); obj.rotation.set(0, 0, 0);
     const holder = new THREE.Group(); holder.add(obj); this.pivot.add(holder);
@@ -119,7 +126,8 @@ export class InspectUI {
     r.domElement.onpointerdown = e => { drag = { x: e.clientX, y: e.clientY }; r.domElement.setPointerCapture(e.pointerId); };
     r.domElement.onpointermove = e => { if (!drag) return; this.target.y += (e.clientX - drag.x) * 0.01; this.target.x += (e.clientY - drag.y) * 0.01; this.target.x = Math.max(-1.4, Math.min(1.4, this.target.x)); drag = { x: e.clientX, y: e.clientY }; };
     r.domElement.onpointerup = () => { drag = null; };
-    r.domElement.onwheel = e => { this.dist = Math.max(this.minD, Math.min(this.maxD, this.dist * (e.deltaY > 0 ? 1.1 : 0.9))); };
+    this.zoomFn = (f) => { this.dist = Math.max(this.minD, Math.min(this.maxD, this.dist / f)); };
+    r.domElement.onwheel = e => this.zoomFn(e.deltaY > 0 ? 1 / 1.1 : 1.1);
     let first = true;
     const loop = () => {
       if (!this.active) return;
@@ -140,8 +148,9 @@ export class InspectUI {
       const img = new Image(); img.src = canvas.toDataURL(); this.thumb = img.src; this.inv.thumbs[this.evId] ||= img.src;
       img.style.background = '#6a2c1d'; img.style.padding = '20px';
       wrap.appendChild(img);
-      let z = 1; wrap.onwheel = e => { z = Math.max(1, Math.min(3, z * (e.deltaY > 0 ? 0.9 : 1.1))); img.style.transform = `scale(${z})`; };
-      view.appendChild(h('<div class="vhint">عجلة الفأرة للتكبير</div>'));
+      let z = 1; this.zoomFn = (f) => { z = Math.max(1, Math.min(3, z * f)); img.style.transform = `scale(${z})`; };
+      wrap.onwheel = e => this.zoomFn(e.deltaY > 0 ? 0.9 : 1.1);
+      view.appendChild(h('<div class="vhint">' + (document.documentElement.classList.contains('touch') ? 'زرّا + و − للتكبير' : 'عجلة الفأرة للتكبير') + '</div>'));
     }
   }
 
@@ -150,8 +159,9 @@ export class InspectUI {
     const d = ev.doc;
     const paper = h(`<div class="doc-paper ${d.hand ? 'hand' : ''}">${d.title ? `<h4>${esc(d.title)}</h4>` : ''}${esc(d.body)}</div>`);
     wrap.appendChild(paper);
-    let z = 1; wrap.onwheel = e => { z = Math.max(0.8, Math.min(1.8, z * (e.deltaY > 0 ? 0.92 : 1.08))); paper.style.transform = `scale(${z})` + (d.hand ? ' rotate(-1.2deg)' : ''); };
-    view.appendChild(h('<div class="vhint">عجلة الفأرة للتكبير</div>'));
+    let z = 1; this.zoomFn = (f) => { z = Math.max(0.8, Math.min(1.8, z * f)); paper.style.transform = `scale(${z})` + (d.hand ? ' rotate(-1.2deg)' : ''); };
+    wrap.onwheel = e => this.zoomFn(e.deltaY > 0 ? 0.92 : 1.08);
+    view.appendChild(h('<div class="vhint">' + (document.documentElement.classList.contains('touch') ? 'زرّا + و − للتكبير' : 'عجلة الفأرة للتكبير') + '</div>'));
   }
 
   // Pencil rubbing reveals the indentation of what was written on the missing page above.
@@ -159,7 +169,7 @@ export class InspectUI {
     const g = this.inv.g;
     const already = g.cs.evidence[this.evId] && g.cs.evidence[this.evId].details.includes('rubbed');
     const wrap = h('<div class="docwrap"><div class="rub-wrap"><canvas></canvas></div></div>'); view.appendChild(wrap);
-    const hint = h(`<div class="vhint">${already ? 'الكتابة ظاهرة الآن' : 'اضغط واسحب بالفأرة لتظليل الورقة بالقلم الرصاص'}</div>`); view.appendChild(hint);
+    const hint = h(`<div class="vhint">${already ? 'الكتابة ظاهرة الآن' : (document.documentElement.classList.contains('touch') ? 'مرّر إصبعك على الورقة لتظليلها بالقلم الرصاص' : 'اضغط واسحب بالفأرة لتظليل الورقة بالقلم الرصاص')}</div>`); view.appendChild(hint);
     const W = 720, H = 1000;
     const cv = wrap.querySelector('canvas'); cv.width = W; cv.height = H;
     const ctx = cv.getContext('2d');

@@ -45,6 +45,7 @@ export class Investigation {
     this.physics = new Physics();
     this.world = new World(scene, this.physics);
     this.player = new Player(camera, this.renderer.renderer.domElement, this.physics);
+    this.player.touch = this.app.touch || null;
     this.applySettings();
     Assets.resetProgress(); Assets.onProgress = onProgress;
     try { const env = await Assets.hdri(this.mod.hdri); scene.environment = env; scene.environmentIntensity = 0.35; } catch (e) { console.warn(e); }
@@ -154,6 +155,7 @@ export class Investigation {
     audio.stopAmbience(); audio.stopMusic(); audio.onLightning = null;
     this.player.enabled = false; this.player.unlock();
     this.hud.show(false);
+    if (this.app.touch) this.app.touch.setVisible(false);
     for (const el of ['#dialogue', '#inspect', '#casefile', '#board', '#accuse', '#result', '#letterbox']) show($(el), false);
     this.unsub && this.unsub();
     this.mode = 'stopped';
@@ -163,7 +165,10 @@ export class Investigation {
     if (!this.settings.hints) return;
     if (!this.g.cs.seenHints.move) {
       this.g.cs.seenHints.move = true;
-      setTimeout(() => this.hud.hint('حرّك الفأرة للنظر، واستخدم <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> للحركة. اقترب من الرقيب سليم واضغط <kbd>E</kbd> للتحدث.', 9000), 1200);
+      const msg = this.app.touch
+        ? 'استخدم عصا الحركة في أسفل اليسار للمشي، واسحب بإصبعك على يمين الشاشة للنظر. اقترب من الرقيب سليم واضغط زر التفاعل للتحدث.'
+        : 'حرّك الفأرة للنظر، واستخدم <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> للحركة. اقترب من الرقيب سليم واضغط <kbd>E</kbd> للتحدث.';
+      setTimeout(() => this.hud.hint(msg, 9000), 1200);
     }
   }
   hintOnce(key, html, ms = 7000) {
@@ -176,6 +181,7 @@ export class Investigation {
     show($('#letterbox'), false);
     this.hud.show(true);
     this.player.enabled = true;
+    if (this.app.touch) this.app.touch.setVisible(true);
     this.requestLock();
   }
   requestLock() {
@@ -188,6 +194,7 @@ export class Investigation {
   suspend(mode) {
     this.mode = mode;
     this.player.enabled = false;
+    if (this.app.touch) this.app.touch.setVisible(false);
     this._expectUnlock = true;
     this.player.unlock();
     this.hud.setPrompt(null);
@@ -438,7 +445,8 @@ export class Investigation {
       if (t) {
         const label = typeof t.label === 'function' ? t.label() : t.label;
         this.hud.setPrompt(t, label, !!t.evidence, !!(t.evidence && this.g.cs.evidence[t.evidence]));
-      } else this.hud.setPrompt(null);
+        if (this.app.touch) this.app.touch.setTarget(label);
+      } else { this.hud.setPrompt(null); if (this.app.touch) this.app.touch.setTarget(null); }
       this.g.cs.elapsed += dt;
       this.saveT += dt;
       if (this.saveT > 8) { this.saveT = 0; this.savePose(); this.g.saveSoon(100); }

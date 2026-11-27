@@ -4,6 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>الشاهد الأخير</title>
+  <script>
+    // Phones: lay the interface out on a 1100px-wide virtual screen (the same layout as a small laptop)
+    if (!window.native && (new URLSearchParams(location.search).has('touch') || window.Capacitor || (matchMedia('(pointer: coarse)').matches && navigator.maxTouchPoints > 0))) {
+      document.querySelector('meta[name=viewport]').setAttribute('content', 'width=1100, user-scalable=no');
+      document.documentElement.classList.add('touch');
+    }
+  </script>
   <link rel="stylesheet" href="styles.css">
   <script type="importmap">
   { "imports": {

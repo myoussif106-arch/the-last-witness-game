@@ -1,7 +1,7 @@
 {
- "version": "0.3.0",
- "date": "2026-11-26T22:52:09.901Z",
- "notes": "الشخصيات أصبحت تتكلم بأصوات حقيقية! كل شخصية لها صوت مختلف يتغير حسب حالتها، مع حركة شفاه متزامنة مع الكلام. ويمكنك التحكم في مستوى الأصوات من الإعدادات.",
+ "version": "0.4.0",
+ "date": "2026-11-27T00:02:47.549Z",
+ "notes": "نسخة أندرويد! يمكنك الآن لعب «الشاهد الأخير» على الموبايل بتحكم باللمس، مع نفس القضايا والشخصيات والأصوات.",
  "files": {
   "main.js": {
    "sha256": "e64bc380a60814353adf8489ccf87c6054aa00acd05e306ec96a083c4f624f9b",
@@ -20,8 +20,8 @@
    "size": 957
   },
   "package.json": {
-   "sha256": "7b776ce3c8ff6016e541f5172177fed8e55a8739c44e2310c0c285fa4e4e56e0",
-   "size": 913
+   "sha256": "52c23ebb762041ede33178240f15dd404ae9b8318ef10d75cb5bef693f58492c",
+   "size": 1014
   },
   "THIRD_PARTY_LICENSES.txt": {
    "sha256": "cd88d454964a09bfec4d9f045a33047c58989968a0e93376679bfd453a416dbc",
@@ -47,9 +47,13 @@
    "sha256": "33ead1986cd48c138c4d906c9e5a6341877268461f97623409a2014de1cd4aa4",
    "size": 127152
   },
+  "src/img/icon.png": {
+   "sha256": "d60eae232e4ac0ec2c9e60183938488e6e45b185de14c1a42f355adfda2393a4",
+   "size": 32458
+  },
   "src/index.html": {
-   "sha256": "61142e0e67d6d95e14e7a98c386912ad557a4d877856164a4fc260ffb53521e4",
-   "size": 2285
+   "sha256": "9671d69d18d517ddb5d52f4e17b825a9043c07b2985ae8b7739cdcb67cdf541c",
+   "size": 2761
   },
   "src/js/cases/case01/case.js": {
    "sha256": "2b16daf8bc80d6774912c006bfb075ee628d6ec90a5ad6416616e979c35ae3b0",
@@ -70,6 +74,10 @@
   "src/js/core/audio.js": {
    "sha256": "6eef561a5c355d5b736a57becf1371e20a466c9504c45bb21cd117aec370a76b",
    "size": 18088
+  },
+  "src/js/core/platform.js": {
+   "sha256": "65103f7d0615c7b9ec250ea4d6d475de110638ccca28c5436bc730b4b4e94b0d",
+   "size": 487
   },
   "src/js/core/settings.js": {
    "sha256": "9b64836c3fdb01d1689c5b6f7d9ad526fb3f49b445d970551abd6130f6b57014",
@@ -96,8 +104,8 @@
    "size": 2817
   },
   "src/js/engine/player.js": {
-   "sha256": "113b2542748ced96ce585826f20bd9aecfba2d5f8d9e8b326982cf64532a6e83",
-   "size": 3769
+   "sha256": "805c2fdd6a3c75b2c495bf909981b7c8117f4f28d9f39e6bb81959fec99d7e0a",
+   "size": 4232
   },
   "src/js/engine/renderer.js": {
    "sha256": "21744be714466f3d765379c094bf5b6ae0a6d46c66d83606a21aeb3e0e2ed832",
@@ -108,16 +116,16 @@
    "size": 23418
   },
   "src/js/game/investigation.js": {
-   "sha256": "e822c810f8012904f205e119bce4d557caac0a84c6e86b988e6c7694cf39c8b9",
-   "size": 23508
+   "sha256": "7e44970afb75a6153f2ab68785de2e88038744d4337b3e1c88d9baa42b52af83",
+   "size": 24127
   },
   "src/js/game/state.js": {
-   "sha256": "5d29e5b3e559dde54ae098b21bee2ba9c6945fdee06402ffdfcc37989d93b416",
-   "size": 4418
+   "sha256": "62d3afed5c84e90b6f1e41bb503085f40e24d564fe207952cf0dcceb1c6f6165",
+   "size": 4606
   },
   "src/js/main.js": {
-   "sha256": "3eedca760adbc4f3d0d90755c10df77bfa5661f994f7857d328b544bf469ce7d",
-   "size": 6065
+   "sha256": "c0e877fb1b8fd66ad79d136cd616867eb2861884340052b06c105bcadd79e4b3",
+   "size": 6260
   },
   "src/js/ui/accuse.js": {
    "sha256": "37ce7a566950772d6018478c06f648e9c5ea25ebf41368987008e177defeea3f",
@@ -132,8 +140,8 @@
    "size": 9216
   },
   "src/js/ui/dialogue.js": {
-   "sha256": "4ee876079d0d8bcd30f1746a9955fb007ac70bf2ef9b750da74abba278d5d586",
-   "size": 8359
+   "sha256": "388baae6b6edde3ea43f97f0dd8951147e0dca0d597f44f21ee5575562524569",
+   "size": 8457
   },
   "src/js/ui/dom.js": {
    "sha256": "4d13c5c10b57b01a6389d95e13b5ba0f78847ee13f0a59629f6a81d175905c4a",
@@ -144,20 +152,24 @@
    "size": 2433
   },
   "src/js/ui/inspect.js": {
-   "sha256": "cc82761ce5837ab09a011ea0581ea25d46b7bbad8fc6b7409665170af12bd174",
-   "size": 12712
+   "sha256": "4184d2c9fe586782f9e11f941739414cbc55cc524d8850718c4368b4f71ab51c",
+   "size": 13738
   },
   "src/js/ui/menus.js": {
-   "sha256": "801046f73ba758264c6ff658ca6c03ebd1b0d4692e60ce6d4d874eeb4581d454",
-   "size": 17932
+   "sha256": "e0393fd6a391eadd48766ecd7782931c9fe48d4b05215978fcfdc5e8d68c23cb",
+   "size": 20315
   },
   "src/js/ui/picker.js": {
    "sha256": "b9ebc3a1686ac1f962aab7ef71ef57f1a85768c5c15568d05fff8dc17c10a431",
    "size": 3213
   },
+  "src/js/ui/touch.js": {
+   "sha256": "40316c8bf14359de84aebc503692d1640dcfeed18740587f900c2b9a092db3a1",
+   "size": 3820
+  },
   "src/styles.css": {
-   "sha256": "d1931827ed47acdb59f2723948561944863a1ae8e97ba61c251265d8d49a9ad8",
-   "size": 31396
+   "sha256": "d5f3256a7486b294d88822588d569c79618ea8939ef7e7a61057f84d79c08b29",
+   "size": 33713
   },
   "assets/anims/f_gestic_listen_deny_01.json": {
    "sha256": "e3774ea32d82dafad7f52c5954d5496ec06df9739e0eeedd992ad53b7460b181",

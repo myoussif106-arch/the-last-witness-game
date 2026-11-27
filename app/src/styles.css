@@ -317,3 +317,24 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px;
 /* readable subtitles over bright clothing */
 #dialogue .sub { background: radial-gradient(ellipse at center, rgba(0,0,0,0.62), rgba(0,0,0,0.35) 55%, transparent 75%); padding: 12px 40px; }
 #dialogue .sub .spk { text-shadow: 0 1px 4px #000; }
+
+/* ---------- phones / touch ---------- */
+#touch { position: fixed; inset: 0; z-index: 12; pointer-events: none; touch-action: none; user-select: none; -webkit-user-select: none; }
+#touch .look { position: absolute; top: 0; bottom: 0; right: 0; width: 62%; pointer-events: auto; touch-action: none; }
+#touch .stick { position: absolute; left: 50px; bottom: 50px; width: 170px; height: 170px; border-radius: 50%; background: rgba(10,10,12,0.35); border: 2px solid rgba(233,226,210,0.25); pointer-events: auto; touch-action: none; }
+#touch .knob { position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; background: rgba(233,226,210,0.35); border: 2px solid rgba(232,197,116,0.6); }
+#touch .tbtn { pointer-events: auto; touch-action: manipulation; font-family: var(--ui); color: var(--ink); background: rgba(10,10,12,0.6); border: 1px solid rgba(232,197,116,0.45); border-radius: 12px; }
+#touch .act { position: absolute; right: 60px; bottom: 70px; min-width: 150px; height: 110px; padding: 6px 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-size: 19px; background: rgba(40,32,18,0.8); border: 2px solid var(--gold); border-radius: 22px; }
+#touch .act .ic { font-size: 34px; }
+#touch .act .lb { max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#touch .tbar { position: absolute; left: 24px; top: 20px; display: flex; gap: 10px; direction: ltr; }
+#touch .tbtn.sm { height: 54px; padding: 0 18px; font-size: 17px; }
+.touch #keys-help, .touch #prompt kbd, .touch #crosshair { display: none; }
+.touch #objectives { width: 300px; top: 18px; right: 22px; }
+.touch #objectives .obj { font-size: 14px; }
+.touch #prompt { top: calc(50% + 10px); }
+.touch canvas, .touch #board .cork, .touch #board .pin, .touch .rub-wrap { touch-action: none; }
+.touch .scroll { -webkit-overflow-scrolling: touch; }
+.touch .btn, .touch .choice, .touch .opt, .touch .case-card, .touch .li, .touch .ftab, .touch .card { min-height: 44px; }
+#inspect .zoombtns { position: absolute; bottom: 50px; left: 30px; display: flex; flex-direction: column; gap: 10px; }
+#inspect .zoombtns .btn { width: 64px; height: 64px; font-size: 32px; padding: 0; border-radius: 50%; background: rgba(10,10,12,0.7); }

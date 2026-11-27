@@ -78,7 +78,7 @@ export class DialogueUI {
       } else this.ch.setState('listen');
       this.cont.textContent = '';
       await this._typewrite(tx, text, voice ? Math.max(8, [...text].length / Math.max(0.5, voice.duration * 0.85)) : spk === 'npc' ? cps : cps * 2.2);
-      this.cont.innerHTML = 'انقر أو اضغط <kbd>Space</kbd> للمتابعة';
+      this.cont.innerHTML = document.documentElement.classList.contains('touch') ? 'المس الشاشة للمتابعة' : 'انقر أو اضغط <kbd>Space</kbd> للمتابعة';
       await new Promise(r => { this._advance = () => { this._advance = null; r(); }; });
       audio.stopVoice();
       this.ch.stopSpeaking();
