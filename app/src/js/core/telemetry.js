@@ -26,6 +26,8 @@ async function readDevice() {
     }
   } catch {}
   if (!d.os) { const m = navigator.userAgent.match(/(Android [\d.]+|Windows NT [\d.]+)/); d.os = m ? m[1] : ''; }
+  // desktop browsers never report a model: the Windows app reads the PC maker/model itself
+  if (!d.model && window.native && window.native.deviceModel) { try { d.model = (await window.native.deviceModel()) || ''; } catch {} }
   return (device = d);
 }
 
@@ -60,5 +62,7 @@ export const Telemetry = {
     saveQueue(q);
     flush();
   },
+  // like / dislike from the main menu; `prev` is set when a player changes their vote
+  vote(v, prev = null) { return this.track('feedback', null, prev ? { vote: v, prev } : { vote: v }); },
   get configured() { return !!(TELEMETRY.url && TELEMETRY.key); },
 };

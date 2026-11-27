@@ -24,6 +24,12 @@ export function renderMainMenu(app) {
       </div>
       <div class="foot">التقدم يُحفظ تلقائيًا • <span id="ver">${window.native ? 'نسخة سطح المكتب' : 'نسخة اختبار'}</span></div>
     </div>
+    <div class="vote">
+      <span class="q">هل أعجبتك اللعبة؟</span>
+      <button class="vbtn ${g.data.vote === 'like' ? 'on' : ''}" data-v="like" title="أعجبتني">👍 <span>أعجبتني</span></button>
+      <button class="vbtn ${g.data.vote === 'dislike' ? 'on' : ''}" data-v="dislike" title="لم تعجبني">👎 <span>لم تعجبني</span></button>
+      <span class="thanks">${g.data.vote ? 'شكرًا على رأيك!' : ''}</span>
+    </div>
     <div class="cases scroll" style="position:relative"></div>`;
   const panel = el.querySelector('.cases');
   renderCaseList(app, panel);
@@ -43,6 +49,19 @@ export function renderMainMenu(app) {
       else if (a === 'settings') app.openSettings();
       else if (a === 'credits') showCredits();
       else if (a === 'quit') window.native.quit();
+    };
+  });
+  // like / dislike: one vote per install, can be changed later
+  el.querySelectorAll('.vbtn').forEach(b => {
+    b.onmouseenter = () => audio.hover();
+    b.onclick = () => {
+      audio.init(); audio.resume(); audio.click();
+      const v = b.dataset.v, prev = g.data.vote || null;
+      if (v === prev) return;
+      g.data.vote = v; g.saveSoon(0);
+      Telemetry.vote(v, prev);
+      el.querySelectorAll('.vbtn').forEach(x => x.classList.toggle('on', x.dataset.v === v));
+      el.querySelector('.vote .thanks').textContent = 'شكرًا على رأيك!';
     };
   });
   startMenuRain(el.querySelector('#menu-rain'));

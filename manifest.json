@@ -1,26 +1,26 @@
 {
- "version": "0.5.0",
- "date": "2026-11-27T08:15:32.191Z",
- "notes": "- قضية جديدة: «اختفاء الموظف» — محاسب يختفي من مكتبه في منتصف النهار، وثلاثة زملاء يروون قصصًا لا تتطابق. تُفتح بعد حل القضية الأولى.",
+ "version": "0.5.1",
+ "date": "2026-11-27T08:48:38.684Z",
+ "notes": "- جديد: زرّا «أعجبتني» و«لم تعجبني» في القائمة الرئيسية — قل لنا رأيك في اللعبة، ويمكنك تغييره في أي وقت.",
  "files": {
   "main.js": {
    "sha256": "e64bc380a60814353adf8489ccf87c6054aa00acd05e306ec96a083c4f624f9b",
    "size": 1703
   },
   "app-main.js": {
-   "sha256": "819ff439367cbb3e90505bf164cf4683d5711462bec73de0a42018477b232d0a",
-   "size": 6411
+   "sha256": "960d4b8b9a4f8b7d217b422530669d08215cce76037a566f24b0611194e77166",
+   "size": 7308
   },
   "updater.js": {
    "sha256": "7ae2276e5d3d14a0b23be1ca6bc522b9e710f900f021fc8e047decbb03bf33dd",
    "size": 5087
   },
   "preload.js": {
-   "sha256": "96ae4202ef9ed922f49818c5095838112070d259442e06c3eca634d125788927",
-   "size": 957
+   "sha256": "7423f4eb404093ae21ec99be932a049d4a2d033a259d39e2fd9635e7680846e3",
+   "size": 1014
   },
   "package.json": {
-   "sha256": "1ac99a8707295edbefb538197f399a2b8dfca8b7e75a66e93068476988829ff3",
+   "sha256": "516554bc301c0bb45267949eed7fbbad7c893bcdecfaba568e2c462e934de12d",
    "size": 1014
   },
   "THIRD_PARTY_LICENSES.txt": {
@@ -104,8 +104,8 @@
    "size": 302
   },
   "src/js/core/telemetry.js": {
-   "sha256": "a2959379e1099a5c5b824e9840a2b766e45286b49662eedeb660cf54b6476e60",
-   "size": 2682
+   "sha256": "05365cc671a7fb1ea6e9ad9751d78ade29b926167a7bcd8362ab8a19eaee4e6c",
+   "size": 3102
   },
   "src/js/core/voicekey.js": {
    "sha256": "263aeb6143fb0d7682aa4eb7376072b35c31a6d433d4bd71711b8145fad1fed0",
@@ -176,8 +176,8 @@
    "size": 13738
   },
   "src/js/ui/menus.js": {
-   "sha256": "69b48cf8fa2ee07ccbc74baa5752207a81770afd093254198f3b7900aafe16db",
-   "size": 20365
+   "sha256": "46e4d3d07294feef7a7f0b37104baa1a07b02d62653515974d34e7afa78c06bd",
+   "size": 21422
   },
   "src/js/ui/picker.js": {
    "sha256": "b9ebc3a1686ac1f962aab7ef71ef57f1a85768c5c15568d05fff8dc17c10a431",
@@ -188,8 +188,8 @@
    "size": 3820
   },
   "src/styles.css": {
-   "sha256": "d5f3256a7486b294d88822588d569c79618ea8939ef7e7a61057f84d79c08b29",
-   "size": 33713
+   "sha256": "af5ef33f0e27343ddceaf66c30cbcac909095427a9bea2cbbbb773da6d8977e8",
+   "size": 34329
   },
   "assets/anims/f_gestic_listen_deny_01.json": {
    "sha256": "e3774ea32d82dafad7f52c5954d5496ec06df9739e0eeedd992ad53b7460b181",

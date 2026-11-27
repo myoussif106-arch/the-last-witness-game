@@ -86,6 +86,18 @@ app.whenReady().then(() => {
   ipcMain.handle('save:path', () => savePath());
   ipcMain.handle('app:fullscreen', (_e, on) => { win.setFullScreen(!!on); return win.isFullScreen(); });
   ipcMain.handle('app:quit', () => app.quit());
+  // PC maker + model name from the BIOS registry key (e.g. "HP Pavilion 15") for the anonymous stats; never a serial or id
+  let pcModel = null;
+  ipcMain.handle('device:model', () => pcModel || (pcModel = new Promise(res => {
+    if (process.platform !== 'win32') return res('');
+    require('child_process').execFile('reg', ['query', 'HKLM\\HARDWARE\\DESCRIPTION\\System\\BIOS'], { windowsHide: true, timeout: 4000 }, (err, out) => {
+      if (err) return res('');
+      const val = (k) => { const m = String(out).match(new RegExp('^\\s*' + k + '\\s+REG_SZ\\s+(.+)$', 'm')); return m ? m[1].trim() : ''; };
+      const junk = /o\.?e\.?m|default|not applicable|system product name|system manufacturer|^none$|^\s*$/i;
+      const maker = val('SystemManufacturer'), product = val('SystemProductName');
+      res([maker, product].filter(s => !junk.test(s)).join(' ').slice(0, 80));
+    });
+  })));
   // updates
   ipcMain.handle('update:info', () => ({ version: updater.version, enabled: updater.enabled() || !!process.env.LW_FORCE_UPDATER }));
   ipcMain.handle('update:check', async () => { try { return await updater.check(); } catch (e) { return { available: false, error: e.message }; } });

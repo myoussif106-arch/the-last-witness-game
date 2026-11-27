@@ -15,6 +15,7 @@ contextBridge.exposeInMainWorld('native', {
     return ipcRenderer.invoke('update:download').finally(() => ipcRenderer.removeListener('update:progress', h));
   },
   restartForUpdate: () => ipcRenderer.invoke('update:restart'),
+  deviceModel: () => ipcRenderer.invoke('device:model'),
   testShot: (name) => ipcRenderer.invoke('test:shot', name),
   testInput: (evts) => ipcRenderer.invoke('test:input', evts),
 });
